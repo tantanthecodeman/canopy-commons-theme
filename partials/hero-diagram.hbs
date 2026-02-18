@@ -1,35 +1,40 @@
-<div class="diagram-wrapper floating-diagram reveal-on-scroll">
+<div class="diagram-wrapper reveal-on-scroll">
 
-    <svg viewBox="0 0 500 500" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+    <div class="ring-layer ring-outer">
+        <svg viewBox="0 0 650 650">
+            <circle cx="325" cy="325" r="300" fill="none"/>
+        </svg>
+    </div>
 
-        <!-- Outer circle -->
-        <circle cx="250" cy="250" r="220"
-            stroke="#0E78BE"
-            stroke-width="2"
-            stroke-dasharray="6 6"
-            fill="none"
-            opacity="0.4"/>
+    <div class="ring-layer ring-middle">
+        <svg viewBox="0 0 650 650">
+            <circle cx="325" cy="325" r="240" fill="none"/>
+        </svg>
+    </div>
 
-        <!-- Middle circle -->
-        <circle cx="250" cy="250" r="170"
-            stroke="#F2D377"
-            stroke-width="2"
-            fill="none"
-            opacity="0.6"/>
+    <div class="ring-layer ring-inner">
+        <svg viewBox="0 0 650 650">
+            <circle cx="325" cy="325" r="180" fill="none"/>
+        </svg>
+    </div>
 
-        <!-- Inner circle -->
-        <circle cx="250" cy="250" r="120"
-            stroke="#DA6586"
-            stroke-width="3"
-            fill="none"
-            opacity="0.8"/>
+    <!-- Community Sabha Center -->
+    <div class="diagram-core">
+        <div class="sabha-circle">
+            <div class="sabha-dot"></div>
+        </div>
+    </div>
 
-        <!-- Decorative dots -->
-        <circle cx="250" cy="30" r="8" fill="#0E78BE"/>
-        <circle cx="450" cy="250" r="8" fill="#F2D377"/>
-        <circle cx="250" cy="470" r="8" fill="#DA6586"/>
-        <circle cx="50" cy="250" r="8" fill="#0E78BE"/>
-
-    </svg>
+    <!-- Static Civic Figures (NOT rotating) -->
+    <div class="civic-layer">
+        <div class="civic-figure blue" style="top:4%; left:50%;"></div>
+        <div class="civic-figure pink" style="top:20%; right:8%;"></div>
+        <div class="civic-figure yellow" style="top:50%; right:4%;"></div>
+        <div class="civic-figure blue" style="bottom:15%; right:20%;"></div>
+        <div class="civic-figure pink" style="bottom:4%; left:50%;"></div>
+        <div class="civic-figure yellow" style="bottom:20%; left:8%;"></div>
+        <div class="civic-figure blue" style="top:50%; left:4%;"></div>
+        <div class="civic-figure pink" style="top:25%; left:15%;"></div>
+    </div>
 
 </div>

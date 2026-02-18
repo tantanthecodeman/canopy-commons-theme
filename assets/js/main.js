@@ -111,5 +111,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+const diagram = document.getElementById("interactive-diagram");
+const outer = document.querySelector(".ring-outer");
+const middle = document.querySelector(".ring-middle");
+const inner = document.querySelector(".ring-inner");
+
+if (diagram) {
+
+    diagram.addEventListener("mousemove", (e) => {
+
+        const rect = diagram.getBoundingClientRect();
+        const x = (e.clientX - rect.left) / rect.width - 0.5;
+        const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        outer.style.transform = `rotate(${x * 40}deg)`;
+        middle.style.transform = `rotate(${x * -60}deg)`;
+        inner.style.transform = `rotate(${x * 80}deg)`;
+
+    });
+
+    diagram.addEventListener("mouseleave", () => {
+        outer.style.transform = "";
+        middle.style.transform = "";
+        inner.style.transform = "";
+    });
+}
+
+
+
 
 

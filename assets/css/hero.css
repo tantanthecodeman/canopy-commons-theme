@@ -1,85 +1,170 @@
-/*Modified Hero diagram*/
+/* ==========================================
+   HERO DIAGRAM — CIVIC GATHERING STYLE
+========================================== */
 
 .diagram-wrapper {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 1;
-    max-width: 520px;
+    max-width: 650px;
     margin: auto;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+/* Subtle float */
+.diagram-wrapper {
     animation: wrapperFloat 8s ease-in-out infinite;
 }
 
 @keyframes wrapperFloat {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-14px); }
+    50% { transform: translateY(-15px); }
     100% { transform: translateY(0px); }
 }
 
-/* Rotating outer rings */
-.diagram-outer-rotate {
-    animation: slowRotate 40s linear infinite;
-}
+/* ================= RINGS ================= */
 
-.hero-svg {
-    width: 100%;
-    height: 100%;
-}
-
-
-.civic-figure {
+.ring-layer {
     position: absolute;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    animation: floatFigure 6s ease-in-out infinite;
+    inset: 0;
+    transform-origin: center;
 }
 
-.figure-1 {
-    top: 5%;
-    left: 50%;
-    background: #0E78BE;
-    animation-delay: 0s;
+/* OUTER RING */
+.ring-outer {
+    animation: rotateOuter 140s linear infinite;
 }
 
-.figure-2 {
-    bottom: 5%;
-    left: 50%;
-    background: #F2D377;
-    animation-delay: 1s;
+.ring-outer circle {
+    stroke: #F2D377;
+    stroke-width: 6;
 }
 
-.figure-3 {
-    left: 5%;
-    top: 50%;
-    background: #DA6586;
-    animation-delay: 2s;
+/* MIDDLE RING */
+.ring-middle {
+    animation: rotateMiddle 110s linear infinite;
 }
 
-.figure-4 {
-    right: 5%;
-    top: 50%;
-    background: #0E78BE;
-    animation-delay: 3s;
+.ring-middle circle {
+    stroke: #0E78BE;
+    stroke-width: 4;
+    stroke-dasharray: 6 4;
 }
 
-@keyframes floatFigure {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-18px); }
-    100% { transform: translateY(0px); }
+/* INNER RING */
+.ring-inner {
+    animation: rotateInner 90s linear infinite;
 }
 
-@keyframes slowRotate {
+.ring-inner circle {
+    stroke: #DA6586;
+    stroke-width: 3;
+}
+
+@keyframes rotateOuter {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-.reveal-on-scroll {
-    opacity: 0;
-    transform: translateY(40px) scale(0.9);
-    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+@keyframes rotateMiddle {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
 }
 
-.reveal-on-scroll.active {
-    opacity: 1;
-    transform: translateY(0) scale(1);
+@keyframes rotateInner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ================= COMMUNITY CENTER ================= */
+
+.diagram-core {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    border: 6px solid #0E78BE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Sabha Inner Circle */
+.sabha-circle {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #DA6586;
+    position: relative;
+}
+
+.sabha-dot {
+    width: 12px;
+    height: 12px;
+    background: #F2D377;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ================= CIVIC FIGURES ================= */
+
+.civic-layer {
+    position: absolute;
+    inset: 0;
+}
+
+/* Larger, more refined */
+.civic-figure {
+    position: absolute;
+    width: 48px;
+    height: 70px;
+    transform: translate(-50%, -50%);
+}
+
+/* Head */
+.civic-figure::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+/* Body */
+.civic-figure::after {
+    content: "";
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    width: 14px;
+    height: 34px;
+    border-radius: 6px;
+    transform: translateX(-50%);
+}
+
+/* Color themes */
+.civic-figure.blue::before,
+.civic-figure.blue::after {
+    background: #0E78BE;
+}
+
+.civic-figure.pink::before,
+.civic-figure.pink::after {
+    background: #DA6586;
+}
+
+.civic-figure.yellow::before,
+.civic-figure.yellow::after {
+    background: #F2D377;
 }

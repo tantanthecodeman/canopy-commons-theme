@@ -1,6 +1,4 @@
-/* =====================================
-   GLOBAL RESET
-===================================== */
+@import "hero.css";
 
 * {
     box-sizing: border-box;
@@ -337,108 +335,6 @@ body {
 .btn-secondary:hover {
     background: #f9fafb;
     transform: scale(1.05);
-}
-
-/* RIGHT DIAGRAM */
-
-.hero-diagram {
-    position: relative;
-}
-
-.diagram-wrapper {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    max-width: 520px;
-    margin: auto;
-}
-
-.diagram-placeholder {
-    width: 100%;
-    height: 100%;
-    background: #f3f4f6;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #9ca3af;
-    font-weight: 600;
-}
-
-/* =====================================
-   ANIMATIONS
-===================================== */
-
-.fade-in-left {
-    opacity: 0;
-    transform: translateX(-40px);
-    animation: fadeLeft 1s forwards;
-}
-
-.fade-in-scale {
-    opacity: 0;
-    transform: scale(0.8);
-    animation: fadeScale 1s forwards;
-    animation-delay: 0.2s;
-}
-
-@keyframes fadeLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes fadeScale {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-@media (max-width: 1024px) {
-
-    .hero-container {
-        grid-template-columns: 1fr;
-        gap: 60px;
-        text-align: center;
-    }
-
-    .hero-description {
-        margin: auto;
-    }
-
-    .hero-buttons {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .hero-title {
-        font-size: 40px;
-    }
-
-    .hero-section {
-        padding: 100px 20px 60px;
-    }
-}
-/* =====================================
-   FLOATING ANIMATION
-===================================== */
-
-.floating-diagram {
-    animation: floatDiagram 6s ease-in-out infinite;
-}
-
-@keyframes floatDiagram {
-    0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-12px);
-    }
-    100% {
-        transform: translateY(0px);
-    }
 }
 /* =====================================
    SCROLL REVEAL
