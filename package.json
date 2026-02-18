@@ -1,0 +1,17 @@
+{
+  "name": "canopy-commons-theme",
+  "description": "Custom Ghost theme for Canopy Commons",
+  "version": "1.0.0",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "author": {
+    "name": "Canopy Commons",
+    "email": "hello@canopycommons.org"
+  },
+  "license": "MIT",
+  "keywords": ["ghost-theme"],
+  "config": {
+    "posts_per_page": 6
+  }
+}

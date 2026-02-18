@@ -1,0 +1,43 @@
+<header class="site-header" id="site-header">
+
+    <!-- 1. Logo -->
+    <div class="header-logo">
+        <a href="{{@site.url}}" class="logo-link">
+            {{#if @site.logo}}
+                <img src="{{@site.logo}}" alt="{{@site.title}}" id="dynamic-logo">
+            {{else}}
+                <span class="logo-text">{{@site.title}}</span>
+            {{/if}}
+        </a>
+    </div>
+
+    <!-- 2. Center Navigation -->
+    <nav class="header-nav">
+        <div class="nav-pill">
+            <div class="nav-hover" id="nav-hover"></div>
+            {{navigation}}
+        </div>
+    </nav>
+
+
+    <!-- 3. Donate Button -->
+    <div class="header-action">
+        <a href="#" class="donate-btn">
+            <span>Donate</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Mobile Toggle -->
+    <button class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</header>
