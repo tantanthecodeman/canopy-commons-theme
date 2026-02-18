@@ -1,35 +1,37 @@
-<div class="diagram-wrapper floating-diagram reveal-on-scroll">
+<div class="diagram-wrapper reveal-on-scroll">
 
-    <svg viewBox="0 0 500 500" class="hero-svg" xmlns="http://www.w3.org/2000/svg">
+    <div class="diagram-outer-rotate">
+        <svg viewBox="0 0 500 500" class="hero-svg">
 
-        <!-- Outer circle -->
-        <circle cx="250" cy="250" r="220"
-            stroke="#0E78BE"
-            stroke-width="2"
-            stroke-dasharray="6 6"
-            fill="none"
-            opacity="0.4"/>
+            <!-- Outer rotating ring -->
+            <circle cx="250" cy="250" r="220"
+                stroke="#0E78BE"
+                stroke-width="2"
+                stroke-dasharray="6 6"
+                fill="none"
+                opacity="0.4"/>
 
-        <!-- Middle circle -->
-        <circle cx="250" cy="250" r="170"
-            stroke="#F2D377"
-            stroke-width="2"
-            fill="none"
-            opacity="0.6"/>
+            <!-- Pink ring -->
+            <circle cx="250" cy="250" r="170"
+                stroke="#DA6586"
+                stroke-width="3"
+                fill="none"
+                opacity="0.6"/>
 
-        <!-- Inner circle -->
-        <circle cx="250" cy="250" r="120"
-            stroke="#DA6586"
-            stroke-width="3"
-            fill="none"
-            opacity="0.8"/>
+            <!-- Yellow ring -->
+            <circle cx="250" cy="250" r="120"
+                stroke="#F2D377"
+                stroke-width="2"
+                fill="none"
+                opacity="0.8"/>
 
-        <!-- Decorative dots -->
-        <circle cx="250" cy="30" r="8" fill="#0E78BE"/>
-        <circle cx="450" cy="250" r="8" fill="#F2D377"/>
-        <circle cx="250" cy="470" r="8" fill="#DA6586"/>
-        <circle cx="50" cy="250" r="8" fill="#0E78BE"/>
+        </svg>
+    </div>
 
-    </svg>
+    <!-- Floating People (abstract civic figures) -->
+    <div class="civic-figure figure-1"></div>
+    <div class="civic-figure figure-2"></div>
+    <div class="civic-figure figure-3"></div>
+    <div class="civic-figure figure-4"></div>
 
 </div>
