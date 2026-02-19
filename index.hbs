@@ -69,4 +69,92 @@
 
 {{> resource-library}}
 
-{{> latest-news}}
+<section class="latest-news-section">
+
+    <div class="latest-container">
+
+        <div class="latest-header">
+            <h2>Latest from the Common</h2>
+        </div>
+
+        <div class="latest-grid">
+
+            {{#foreach posts limit="3"}}
+
+                <article class="latest-card">
+
+                    <div class="latest-image">
+                        {{#if feature_image}}
+                            <img src="{{feature_image}}" alt="{{title}}">
+                        {{else}}
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop">
+                        {{/if}}
+                    </div>
+
+                    <div class="latest-content">
+
+                        <div class="latest-meta">
+                            {{#if primary_tag}}
+                                <span class="latest-category">
+                                    {{primary_tag.name}}
+                                </span>
+                            {{/if}}
+                            <span class="meta-dot">•</span>
+                            <span>{{date format="MMM DD, YYYY"}}</span>
+                        </div>
+
+                        <h3>
+                            <a href="{{url}}">{{title}}</a>
+                        </h3>
+
+                        <p>{{excerpt words="22"}}</p>
+
+                        <a href="{{url}}" class="latest-link">
+                            Read Article →
+                        </a>
+
+                    </div>
+
+                </article>
+
+            {{/foreach}}
+
+            <!-- PLACEHOLDER 2 -->
+            <div class="latest-card">
+                <div class="latest-image">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop">
+                </div>
+                <div class="latest-content">
+                    <div class="latest-meta">
+                        <span class="latest-category">LEARNING</span>
+                        <span class="meta-dot">•</span>
+                        <span>OCT 12, 2023</span>
+                    </div>
+                    <h3>5 Lessons from our Civic Learning Cohort</h3>
+                    <p>Graduates reflect on neutral moderation and active listening in heated debates.</p>
+                    <a href="#" class="latest-link">Read Article →</a>
+                </div>
+            </div>
+
+            <!-- PLACEHOLDER 3 -->
+            <div class="latest-card">
+                <div class="latest-image">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop">
+                </div>
+                <div class="latest-content">
+                    <div class="latest-meta">
+                        <span class="latest-category">TECHNOLOGY</span>
+                        <span class="meta-dot">•</span>
+                        <span>SEP 28, 2023</span>
+                    </div>
+                    <h3>The Future of Digital Deliberation</h3>
+                    <p>First look at the new Canopy Voting platform built for transparency.</p>
+                    <a href="#" class="latest-link">Read Article →</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
