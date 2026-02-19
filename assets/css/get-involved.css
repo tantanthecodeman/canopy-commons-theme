@@ -72,16 +72,22 @@
 
 .card-watermark {
     position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 120px;
-    opacity: 0.08;
-    transform: rotate(-15deg);
+    bottom: -30px;
+    right: -30px;
+    width: 160px;               /* slightly larger base size */
+    opacity: 0.15;              /* slightly more visible even idle */
+    transform: rotate(-15deg) scale(1);
+    transition: 
+        transform 0.45s ease,
+        opacity 0.45s ease;
+    pointer-events: none;
 }
 
-.card-watermark img {
-    width: 100%;
+.get-card:hover .card-watermark {
+    opacity: 0.35;              /* noticeably stronger */
+    transform: rotate(-15deg) scale(1.2);
 }
+
 
 /* Content */
 
@@ -154,19 +160,22 @@
 
     .card-watermark {
     position: absolute;
-    bottom: -25px;
-    right: -25px;
-    width: 150px;              /* increased size */
-    opacity: 0.12;             /* slightly more visible */
+    bottom: -30px;
+    right: -30px;
+    width: 160px;               /* slightly larger base size */
+    opacity: 0.15;              /* slightly more visible even idle */
     transform: rotate(-15deg) scale(1);
-    transition: all 0.4s ease;
+    transition: 
+        transform 0.45s ease,
+        opacity 0.45s ease;
     pointer-events: none;
-  }
+}
 
-    .get-card:hover .card-watermark {
-    opacity: 0.25;             /* stronger on hover */
-    transform: rotate(-15deg) scale(1.1);
-  }
+.get-card:hover .card-watermark {
+    opacity: 0.35;              /* noticeably stronger */
+    transform: rotate(-15deg) scale(1.2);
+}
+
 
 }
 @media (max-width: 768px) {
