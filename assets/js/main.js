@@ -187,6 +187,23 @@ document.addEventListener("DOMContentLoaded", function () {
     steps.forEach(step => observer.observe(step));
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+    const cards = document.querySelectorAll(".reveal-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("active");
+                }, index * 120);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => observer.observe(card));
+
+});
 
 
 
