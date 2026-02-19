@@ -1,0 +1,177 @@
+/* ======================================
+   GET INVOLVED SECTION
+====================================== */
+
+.get-involved-section {
+    padding: 120px 40px;
+    background: linear-gradient(135deg, #fef9c3 0%, #fde2f3 50%, #dbeafe 100%);
+}
+
+.get-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.get-header {
+    margin-bottom: 60px;
+}
+
+.get-header h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.get-header p {
+    font-size: 20px;           /* slightly increased */
+    max-width: 650px;
+    line-height: 1.6;
+    color: #374151;            /* correct dark gray */
+    font-weight: 500;
+}
+
+
+/* GRID */
+
+.get-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+/* CARD */
+
+.get-card {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    padding: 32px;
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    transition: all 0.35s ease;
+
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.get-card.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.get-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+}
+
+/* Watermark Icon */
+
+.card-watermark {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 120px;
+    opacity: 0.08;
+    transform: rotate(-15deg);
+}
+
+.card-watermark img {
+    width: 100%;
+}
+
+/* Content */
+
+.get-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 14px;
+}
+
+.get-card p {
+    font-size: 15px;
+    color: #4b5563;
+    margin-bottom: 30px;
+}
+
+/* Links */
+
+.card-link {
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;   /* remove default */
+    transition: transform 0.3s ease, text-decoration 0.3s ease;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+
+.blue-link { color: #2563eb; }
+.yellow-link { color: #ca8a04; }
+.pink-link { color: #db2777; }
+.green-link { color: #16a34a; }
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media (max-width: 1100px) {
+    .get-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .get-involved-section {
+        padding: 80px 20px;
+    }
+
+    .get-header h2 {
+        font-size: 30px;
+    }
+
+    .get-header p {
+        font-size: 16px;
+    }
+
+    .get-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .get-card {
+        padding: 24px;
+        border-radius: 14px;
+    }
+
+    .card-watermark {
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+    width: 150px;              /* increased size */
+    opacity: 0.12;             /* slightly more visible */
+    transform: rotate(-15deg) scale(1);
+    transition: all 0.4s ease;
+    pointer-events: none;
+  }
+
+    .get-card:hover .card-watermark {
+    opacity: 0.25;             /* stronger on hover */
+    transform: rotate(-15deg) scale(1.1);
+  }
+
+}
+@media (max-width: 768px) {
+
+    .get-header p {
+        font-size: 17px;
+    }
+}
