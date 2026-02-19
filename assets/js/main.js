@@ -174,19 +174,29 @@ document.addEventListener("DOMContentLoaded", function () {
     const steps = document.querySelectorAll(".timeline-step");
 
     const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
+
+        entries.forEach((entry, index) => {
+
             if (entry.isIntersecting) {
-                entry.target.classList.add("active");
+
+                setTimeout(() => {
+                    entry.target.classList.add("active");
+                }, index * 150);   // slight stagger
+
                 observer.unobserve(entry.target);
             }
+
         });
+
     }, {
-        threshold: 0.3
+        threshold: 0.35,          // wait until 35% visible
+        rootMargin: "0px 0px -80px 0px"
     });
 
     steps.forEach(step => observer.observe(step));
 
 });
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const cards = document.querySelectorAll(".reveal-card");
