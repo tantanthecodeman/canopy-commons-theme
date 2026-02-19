@@ -1,0 +1,271 @@
+/* ======================================
+   THEORY OF CHANGE – STRUCTURE FIXED
+====================================== */
+
+.methodology-section {
+    padding: 120px 40px;
+    background: #f8fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.methodology-container {
+    max-width: 1100px;
+    margin: auto;
+    position: relative;
+}
+
+/* HEADER */
+
+.methodology-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.methodology-eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #0E78BE;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.methodology-header h2 {
+    font-size: 46px;
+    font-weight: 800;
+    color: #111827;
+}
+
+/* TIMELINE WRAPPER */
+
+.timeline-wrapper {
+    position: relative;
+    padding: 20px 0;
+}
+
+/* Vertical line */
+
+.timeline-line {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: #d1d5db;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+/* STEP */
+
+.timeline-step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 80px 0;
+}
+
+/* LEFT STEP */
+
+.timeline-step.left {
+    justify-content: flex-start;
+}
+
+.timeline-step.left .timeline-content {
+    width: 45%;
+    margin-right: auto;
+    text-align: right;
+    padding-right: 60px;
+}
+
+/* RIGHT STEP */
+
+.timeline-step.right {
+    justify-content: flex-end;
+}
+
+.timeline-step.right .timeline-content {
+    width: 45%;
+    margin-left: auto;
+    text-align: left;
+    padding-left: 60px;
+}
+
+/* CARD */
+
+.timeline-content {
+    background: #ffffff;
+    padding: 28px 32px;
+    border-radius: 14px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.06);
+    position: relative;
+    z-index: 2;
+
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+/* Directional reveal base */
+
+.timeline-step.left .timeline-content {
+    transform: translateX(-80px);
+}
+
+.timeline-step.right .timeline-content {
+    transform: translateX(80px);
+}
+
+.timeline-step.active .timeline-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* TEXT */
+
+.timeline-content h3 {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.timeline-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+/* DOT */
+
+.timeline-dot {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px #f8fafc;
+    z-index: 3;
+}
+
+/* DOT COLORS */
+
+.dot-blue { background: #0E78BE; }
+.dot-yellow { background: #F2D377; }
+.dot-pink { background: #DA6586; }
+.dot-dark { background: #111827; }
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-step {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 60px 0;
+        padding-left: 60px;
+    }
+
+    .timeline-step.left .timeline-content,
+    .timeline-step.right .timeline-content {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        transform: translateY(40px);
+    }
+
+    .timeline-step.active .timeline-content {
+        transform: translateY(0);
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+}
+/* ======================================
+   HOVER GLOW EFFECT
+====================================== */
+
+.timeline-content {
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+/* Base hover lift */
+.timeline-content:hover {
+    transform: translateY(-6px);
+}
+
+/* Blue glow */
+.glow-blue:hover {
+    box-shadow:
+        0 25px 60px rgba(14, 120, 190, 0.15),
+        0 0 0 1px rgba(14, 120, 190, 0.05);
+}
+
+/* Yellow glow */
+.glow-yellow:hover {
+    box-shadow:
+        0 25px 60px rgba(242, 211, 119, 0.25),
+        0 0 0 1px rgba(242, 211, 119, 0.1);
+}
+
+/* Pink glow */
+.glow-pink:hover {
+    box-shadow:
+        0 25px 60px rgba(218, 101, 134, 0.18),
+        0 0 0 1px rgba(218, 101, 134, 0.08);
+}
+
+/* Dark glow */
+.glow-dark:hover {
+    box-shadow:
+        0 25px 60px rgba(17, 24, 39, 0.2),
+        0 0 0 1px rgba(17, 24, 39, 0.08);
+}
+@media (max-width: 900px) {
+
+    .timeline-line {
+        left: 20px;
+    }
+
+    .timeline-step {
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 60px 0;
+        padding-left: 60px;
+    }
+
+    .timeline-step.left,
+    .timeline-step.right {
+        justify-content: flex-start;
+    }
+
+    .timeline-step.left .timeline-content,
+    .timeline-step.right .timeline-content {
+        width: 100%;
+        margin: 0;
+        padding: 24px;
+        text-align: left;
+        transform: translateY(40px);
+    }
+
+    .timeline-step.active .timeline-content {
+        transform: translateY(0);
+    }
+
+    .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-wrapper {
+        padding: 0;
+    }
+}

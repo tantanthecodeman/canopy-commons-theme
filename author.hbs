@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{#author}}
+
+<section class="author-profile">
+    <h1>{{name}}</h1>
+
+    {{#if profile_image}}
+        <img src="{{profile_image}}" alt="{{name}}">
+    {{/if}}
+
+    {{#if bio}}
+        <p>{{bio}}</p>
+    {{/if}}
+
+</section>
+
+<section>
+    {{#foreach posts}}
+        <article>
+            <h2><a href="{{url}}">{{title}}</a></h2>
+        </article>
+    {{/foreach}}
+</section>
+
+{{/author}}
