@@ -231,6 +231,23 @@ document.addEventListener("DOMContentLoaded", function () {
     resourceCards.forEach(card => observer.observe(card));
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+    const latestCards = document.querySelectorAll(".latest-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("active");
+                }, index * 120);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    latestCards.forEach(card => observer.observe(card));
+
+});
 
 
 
