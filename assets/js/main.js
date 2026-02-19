@@ -214,6 +214,23 @@ document.addEventListener("DOMContentLoaded", function () {
     cards.forEach(card => observer.observe(card));
 
 });
+document.addEventListener("DOMContentLoaded", function () {
+
+    const resourceCards = document.querySelectorAll(".resource-card");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add("active");
+                }, index * 120);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    resourceCards.forEach(card => observer.observe(card));
+
+});
 
 
 
