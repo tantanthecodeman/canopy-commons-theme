@@ -248,6 +248,49 @@ document.addEventListener("DOMContentLoaded", function () {
     latestCards.forEach(card => observer.observe(card));
 
 });
+const logoVariants = {
+    blue: document.querySelector(".logo-blue"),
+    pink: document.querySelector(".logo-pink"),
+    yellow: document.querySelector(".logo-yellow"),
+    white: document.querySelector(".logo-white")
+};
+
+function switchLogo(color) {
+    Object.values(logoVariants).forEach(l => l.classList.remove("active"));
+    logoVariants[color].classList.add("active");
+
+    const wrapper = document.querySelector(".logo-wrapper");
+    wrapper.classList.remove("rotate");
+    void wrapper.offsetWidth;
+    wrapper.classList.add("rotate");
+}
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+
+            if (entry.target.classList.contains("hero-section")) {
+                switchLogo("blue");
+            }
+
+            if (entry.target.classList.contains("problem-section")) {
+                switchLogo("pink");
+            }
+
+            if (entry.target.classList.contains("theory-section")) {
+                switchLogo("yellow");
+            }
+
+            if (entry.target.classList.contains("footer")) {
+                switchLogo("blue");
+            }
+        }
+    });
+}, { threshold: 0.6 });
+
+document.querySelectorAll("section").forEach(section => {
+    observer.observe(section);
+});
 
 
 
