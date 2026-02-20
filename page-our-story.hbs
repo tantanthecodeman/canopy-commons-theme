@@ -33,22 +33,47 @@
 
 
 
-<section class="our-story-problem container">
-    <div class="problem-grid">
+<section class="our-story-problem">
+    <div class="container problem-grid">
+
         <div class="problem-text">
             <h2>Democracy today often feels distant.</h2>
+
             <p>
                 People are told to engage, to care, to speak up — but the actual process is confusing,
-                exhausting, and often disappointing.
+                exhausting, and often disappointing. You sign. You share. You wait. Nothing moves.
             </p>
+
             <p>
                 Intent exists. What’s missing is access — to tools, to know-how, to examples of what
-                actually works.
+                actually works. Most citizens don’t know where power lives, how decisions are made,
+                or how to meaningfully participate.
             </p>
         </div>
 
         <div class="problem-visual">
-            <!-- Decorative placeholder -->
+            {{> hero-diagram}}  {{!-- reuse your existing SVG component --}}
         </div>
+
     </div>
+</section>
+
+<section class="our-story-question">
+
+    <div class="container question-inner">
+
+        <div class="question-accent"></div>
+
+        <div class="question-content">
+            <h2>Is there another way?</h2>
+
+            <p>
+                Trust is wearing thin. Digital-first campaigns feel hollow.
+                People want engagement that feels human again — grounded in place,
+                rooted in relationships, and capable of creating change.
+            </p>
+        </div>
+
+    </div>
+
 </section>
