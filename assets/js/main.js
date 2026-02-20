@@ -292,6 +292,33 @@ document.querySelectorAll("section").forEach(section => {
     observer.observe(section);
 });
 
+const words = [
+    { text: "Researched", color: "#0E78BE" },
+    { text: "Shared", color: "#DA6586" },
+    { text: "Inclusive", color: "#F2D377" },
+    { text: "Interactive", color: "#0E78BE" },
+    { text: "Grounded in place", color: "#DA6586" }
+];
+
+const rotatingWord = document.getElementById("rotatingWord");
+
+if (rotatingWord) {
+    let index = 0;
+
+    setInterval(() => {
+        rotatingWord.style.opacity = 0;
+        rotatingWord.style.transform = "translateY(20px)";
+
+        setTimeout(() => {
+            index = (index + 1) % words.length;
+            rotatingWord.textContent = words[index].text;
+            rotatingWord.style.color = words[index].color;
+            rotatingWord.style.opacity = 1;
+            rotatingWord.style.transform = "translateY(0)";
+        }, 400);
+
+    }, 2500);
+}
 
 
 
