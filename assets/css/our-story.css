@@ -1,0 +1,181 @@
+
+/* Remove global body offset */
+body.page-template-page-our-story {
+    padding-top: 0 !important;
+}
+body.page-template-page-our-story .nav-pill {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+body.page-template-page-our-story .nav-hover {
+    display: none !important;
+}
+body.page-template-page-our-story .nav-pill a,
+body.page-template-page-our-story .nav-pill a:visited,
+body.page-template-page-our-story .nav-pill .nav-current a {
+    color: white !important;
+}
+
+/* ======================================
+   OUR STORY HERO — MATCH FIGMA STYLE
+====================================== */
+
+.our-story-hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background */
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Softer gradient like design */
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.55) 40%,
+        rgba(0,0,0,0.25) 70%,
+        rgba(0,0,0,0.05) 100%
+    );
+}
+
+/* Inner wrapper */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+/* Text container */
+.hero-text {
+    max-width: 650px;
+    color: white;
+    padding-top: 120px;
+}
+
+/* Typography matching screenshot */
+.hero-text h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 1.5rem;
+    color: #e6f2ff;
+}
+
+.hero-text p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 2.2rem;
+    opacity: 0.95;
+}
+
+/* Buttons */
+.hero-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.btn-primary {
+    background: #0E78BE;
+    color: white;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-primary:hover {
+    background: #0c65a2;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    padding: 12px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+    background: rgba(255,255,255,0.2);
+}
+body.page-template-page-our-story .site-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent !important;
+    box-shadow: none !important;
+    z-index: 100;
+}
+
+body.page-template-page-our-story .nav-container {
+    background: transparent !important;
+}
+@media (max-width: 900px) {
+
+    .hero-text {
+        padding-top: 100px;
+        max-width: 100%;
+    }
+
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+    }
+}
+body.page-template-page-our-story .site-header {
+    position: absolute !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+body.page-template-page-our-story .site-header.scrolled {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
