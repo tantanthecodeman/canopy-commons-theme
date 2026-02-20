@@ -1,0 +1,140 @@
+<footer class="site-footer">
+
+    <!-- ============================= -->
+    <!-- DONATE CTA SECTION -->
+    <!-- ============================= -->
+
+    <section class="donate-section">
+
+        <div class="donate-glow"></div>
+
+        <div class="donate-container reveal-on-scroll">
+
+            <div class="donate-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+
+            <h2>
+                Support the infrastructure of a 
+                <span>better democracy</span>
+            </h2>
+
+            <p>
+                Your contribution helps us keep our tools open-source and provides direct support to organizers in under-served neighborhoods.
+            </p>
+
+            <div class="donate-buttons">
+                <a href="/donate/"class="btn-primary"> 
+                    Donate Now
+                </a>
+
+                <a href="#" class="btn-secondary">
+                    Become a Monthly Member
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER LINKS SECTION -->
+    <!-- ============================= -->
+
+    <section class="footer-links">
+
+        <div class="footer-container">
+
+            <!-- Column 1 -->
+            <div class="footer-col brand-col">
+                {{#if @site.logo}}
+    <img src="{{@site.logo}}" alt="{{@site.title}}" class="footer-logo">
+{{/if}}
+
+
+                <p>
+                    An initiative by Avantika Foundation. We are dedicated to the preservation and evolution of civic agency through design, research, and organizing.
+                </p>
+
+                <div class="social-links">
+
+    <a href="https://instagram.com/" target="_blank" class="social-icon" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="2" y="2" width="20" height="20" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17" cy="7" r="1.5"/>
+        </svg>
+    </a>
+
+    <a href="https://linkedin.com/" target="_blank" class="social-icon" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-2-2 2 2 0 00-2 2v6h-4v-12h4v2"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+        </svg>
+    </a>
+
+</div>
+
+            </div>
+
+            <!-- Column 2 -->
+            <div class="footer-col">
+                <h4>EXPLORE</h4>
+                <ul>
+    {{#foreach navigation}}
+        <li><a href="{{url}}">{{label}}</a></li>
+    {{/foreach}}
+</ul>
+
+            </div>
+
+            <!-- Column 3 -->
+            <div class="footer-col">
+                <h4>RESOURCES</h4>
+                <ul>
+                    <li><a href="/resource-library/">Library</a></li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="#">Toolkits</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="footer-col">
+                <h4>CONTACT</h4>
+
+                <p>Questions about our work or how to get started?</p>
+
+                <a href="mailto:hello@canopycommons.org" class="email-link">
+                    hello@canopycommons.org
+                </a>
+
+                <small>Response time is typically within 48 hours.</small>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ============================= -->
+    <!-- COPYRIGHT -->
+    <!-- ============================= -->
+
+    <div class="footer-bottom">
+        <div class="footer-bottom-container">
+            <p>© 2026 Avantika Foundation. All rights reserved.</p>
+
+            <div class="footer-legal">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+
+</footer>
