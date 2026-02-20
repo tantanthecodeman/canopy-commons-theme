@@ -2,14 +2,26 @@
 
     <!-- 1. Logo -->
     <div class="header-logo">
-        <a href="{{@site.url}}" class="logo-link">
-            {{#if @site.logo}}
-                <img src="{{@site.logo}}" alt="{{@site.title}}" id="dynamic-logo">
-            {{else}}
-                <span class="logo-text">{{@site.title}}</span>
-            {{/if}}
-        </a>
-    </div>
+    <a href="{{@site.url}}" class="logo-link">
+        <div class="logo-wrapper">
+
+            <img src="{{asset "images/Pink.png"}}" 
+                 class="logo-variant logo-blue active" 
+                 alt="Canopy Commons">
+
+            <img src="{{asset "images/Blue.png"}}" 
+                 class="logo-variant logo-pink">
+
+            <img src="{{asset "images/Yellow.png"}}" 
+                 class="logo-variant logo-yellow">
+
+            <img src="{{asset "images/White.png"}}" 
+                 class="logo-variant logo-white">
+
+        </div>
+    </a>
+</div>
+
 
     <!-- 2. Center Navigation -->
     <nav class="header-nav">
