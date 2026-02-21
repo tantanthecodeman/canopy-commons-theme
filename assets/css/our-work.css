@@ -43,48 +43,52 @@
     gap: 50px;
 }
 
-/* Card Styling */
 .work-card {
-    background: #ffffff;
-    padding: 60px 40px;
-    border-radius: 28px;
-    border: 1px solid #f1f1f1;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.04);
-    transition: all 0.5s ease;
     position: relative;
+    background: #ffffff;
+    padding: 36px 36px;
+    border-radius: 28px;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1),
+                box-shadow 0.35s cubic-bezier(.4,0,.2,1);
     overflow: hidden;
+    will-change: transform;
 }
 
 .work-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.08);
 }
 
 /* Icon Container */
+/* ==============================
+   ICON CENTERING (CORRECTED)
+================================= */
+
 .work-icon {
-    width: 120px;      /* larger */
-    height: 120px;
-    margin-bottom: 30px;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 28px;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .work-icon img {
-    width: 100%;
+    width: 110px;
     height: auto;
-    transition: transform 0.6s ease;
-    align-items: center;
 }
 
-.work-card:hover .work-icon img {
-    transform: scale(1.08) rotate(-2deg);
+.work-card:hover .card-icon img {
+    transform: scale(1.08);
 }
 
 /* Title */
 .work-card h3 {
     font-size: 28px;
-    margin-bottom: 18px;
+    margin-bottom: 14px;
     font-weight: 700;
 }
 
@@ -92,17 +96,9 @@
 .work-card p {
     font-size: 17px;
     color: #6b7280;
-    line-height: 1.7;
-}
-.work-icon img {
-    animation: gentleFloat 6s ease-in-out infinite;
+    line-height: 1.6;
 }
 
-@keyframes gentleFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0px); }
-}
 
 /* Container */
 
@@ -142,6 +138,7 @@
     position: relative;
     display: inline-block;
     padding: 0 10px;
+    text-align: center;
 }
 
 .our-work-title::before {
@@ -222,30 +219,43 @@
     font-weight: 700;
     margin-bottom: 20px;
     color: #111827;
+    text-align: center;
 }
 
 .work-card p {
     color: #4b5563;
     line-height: 1.7;
     margin: 0 auto;
+    text-align: center;
 }
 
 /* ==============================
    CUSTOM ICONS (CLASSY VERSION)
 ================================= */
 
+/* ==============================
+   ICON SIZE + CENTERING FIX
+================================= */
+
+/* ==============================
+   ICON CENTERING FIX
+================================= */
+
 .card-icon {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto 30px; /* CENTER */
+    width: 180px;
+    height: 180px;
+    margin: 0 auto 40px;
     position: relative;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-icon img {
-    width: 90px;
+    width: 110px;
     height: auto;
-    transition: transform 0.6s ease;
+    display: block;
+    margin: auto;
 }
 
 
@@ -313,28 +323,68 @@
     background: #DA6586;
     transform: translateX(-50%);
 }
+/* =====================================
+   PREMIUM FLOAT ANIMATION
+===================================== */
 
-/* Subtle floating animation */
+/* =====================================
+   SUBTLE Z-DEPTH FLOAT
+===================================== */
+
+.work-card {
+    position: relative;
+    transform: translateZ(0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    will-change: transform;
+}
+
+/* Ambient depth shadow */
+
+.work-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 28px;
+    background: radial-gradient(
+        circle at 50% 120%,
+        rgba(0,0,0,0.06),
+        transparent 70%
+    );
+    z-index: -1;
+    transition: opacity 0.4s ease;
+}
+
+/* Slow float */
 
 .work-card:nth-child(1) {
-    animation: floatCard 6s ease-in-out infinite;
+    animation: depthFloat 5s ease-in-out infinite;
 }
 
 .work-card:nth-child(2) {
-    animation: floatCard 6s ease-in-out infinite;
-    animation-delay: 1s;
+    animation: depthFloat 5s ease-in-out infinite;
+    animation-delay: 1.8s;
 }
 
 .work-card:nth-child(3) {
-    animation: floatCard 6s ease-in-out infinite;
-    animation-delay: 2s;
+    animation: depthFloat 5s ease-in-out infinite;
+    animation-delay: 3.5s;
 }
 
-@keyframes floatCard {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-6px); }
+@keyframes depthFloat {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-6px); }
     100% { transform: translateY(0px); }
 }
+
+/* Hover interaction */
+
+.work-card:hover {
+    transform: translateY(-14px) scale(1.01);
+    box-shadow: 0 35px 70px rgba(0,0,0,0.08);
+}
+
+
+
 
 /* Responsive */
 
