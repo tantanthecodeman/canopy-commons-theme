@@ -4,34 +4,20 @@
 
 .insight-section {
     position: relative;
-    padding: 140px 60px 100px;
+    padding: 140px 60px;
     background: #FFF9E6;
     overflow: hidden;
-    min-height: 80vh;
-}
-
-/* Subtle radial depth */
-.insight-bg-glow {
-    position: absolute;
-    top: -200px;
-    right: -200px;
-    width: 700px;
-    height: 700px;
-    background: radial-gradient(circle, rgba(218,101,134,0.08), transparent 60%);
-    pointer-events: none;
 }
 
 /* Layout */
 
 .insight-container {
-    max-width: 1300px;
+    max-width: 1200px;
     margin: auto;
     display: grid;
     grid-template-columns: 1.1fr 1fr;
-    gap: 120px;
+    gap: 100px;
     align-items: center;
-    position: relative;
-    z-index: 2;
 }
 
 /* Label */
@@ -39,21 +25,25 @@
 .insight-label {
     color: #0E78BE;
     font-weight: 800;
-    font-size: 18px;   /* increased */
-    letter-spacing: 4px;
+    font-size: 18px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-/* Heading */
+/* Title */
 
-.insight-heading h2 {
-    font-size: 72px;
+.insight-title {
+    font-size: 64px;
     font-weight: 900;
     line-height: 1.1;
     color: #111827;
+    letter-spacing: -0.5px;
+    max-width: 720px;
 }
+
+/* Highlight Word */
 
 /* Highlight word */
 
@@ -63,127 +53,88 @@
     display: inline-block;
 }
 
+/* Underline */
+
 .hand-underline {
     position: absolute;
-    left: 0;
-    bottom: -12px;
-    width: 100%;
+    left: -4%;
+    bottom: -14px;
+    width: 108%;
     height: 20px;
 }
 
-.hand-underline path {
+.hand-underline line {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
-    transition: stroke-dashoffset 1.2s ease;
+    transition: stroke-dashoffset 2.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.insight-section.active .hand-underline path {
+/* Slow draw animation */
+
+.insight-section.active .hand-underline line {
     stroke-dashoffset: 0;
 }
 
-
-/* Card */
+/* =========================================
+   CARD
+========================================= */
 
 .insight-card {
-    background: linear-gradient(135deg, #ffffff, #fffdf7);
-    padding: 64px;
-    border-radius: 32px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-    border: 1px solid rgba(0,0,0,0.06);
-
-    min-height: 420px;         /* restores visual weight */
-    display: flex;
-    align-items: center;
-
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
-}
-.insight-card p {
-    font-size: 24px;          /* bigger, matches screenshot tone */
-    line-height: 1.7;
-    font-weight: 500;
-    color: #1f2937;
+    position: relative;
+    background: #ffffff;
+    padding: 56px;
+    border-radius: 24px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.06);
+    border: 1px solid rgba(0,0,0,0.04);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    overflow: hidden;
 }
 
+/* Clean Gradient Glow */
 
-.insight-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 35px 80px rgba(0,0,0,0.12);
-}
-
-.insight-card::before {
-    content: "";
+.card-glow {
     position: absolute;
-    inset: -6px;
-    border-radius: inherit;
-    background: linear-gradient(
-        120deg,
-        rgba(14,120,190,0.25),
-        rgba(218,101,134,0.25),
-        rgba(242,211,119,0.25)
-    );
-    z-index: -1;
-    filter: blur(35px);
-    opacity: 0.9;
-    animation: glowPulse 6s ease-in-out infinite;
-}
-
-@keyframes cardFloat {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-14px); }
-    100% { transform: translateY(0px); }
-}
-
-@keyframes glowMove {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-@keyframes glowPulse {
-    0% { opacity: 0.6; transform: scale(1); }
-    50% { opacity: 1; transform: scale(1.05); }
-    100% { opacity: 0.6; transform: scale(1); }
-}
-
-.insight-section::after {
-    content: "";
-    position: absolute;
-    top: 15%;
-    right: 5%;
-    width: 300px;
-    height: 300px;
+    inset: -40%;
     background: radial-gradient(
-        circle,
-        rgba(218,101,134,0.08) 0%,
-        transparent 70%
+        circle at 70% 30%,
+        rgba(14,120,190,0.18),
+        rgba(218,101,134,0.12),
+        rgba(242,211,119,0.10),
+        transparent 65%
     );
-    border-radius: 50%;
     z-index: 0;
+    filter: blur(60px);
+    opacity: 0.7;
+    transition: opacity 0.6s ease;
 }
 
-
-/* Active Reveal */
-
-.insight-section.active .underline-animate {
-    width: 100%;
-}
-
-.insight-section.active .insight-card {
-    transform: translateY(0);
+.insight-card:hover .card-glow {
     opacity: 1;
 }
 
-.insight-madhubani-divider {
-    width: 100%;
-    height: 100px;
-    margin-top:70px;
-    background: url("../images/madhubani.png") repeat-x center;
-    background-size: auto 100px;
-    opacity: 0.5;
-    margin-bottom: 5px;
+/* Content above glow */
+
+.insight-card p {
+    position: relative;
+    z-index: 2;
+    font-size: 22px;
+    line-height: 1.75;
+    color: #1f2937;
+    margin-bottom: 28px;
 }
 
+.insight-card p:last-child {
+    margin-bottom: 0;
+}
 
+.insight-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 35px 80px rgba(0,0,0,0.10);
+}
 
-/* Responsive */
+/* =========================================
+   RESPONSIVE
+========================================= */
 
 @media (max-width: 1100px) {
 
@@ -192,99 +143,36 @@
         gap: 60px;
     }
 
-    .insight-heading h2 {
-        font-size: 48px;
+    .insight-title {
+        font-size: 44px;
     }
 
-}
-/* =========================================
-   CARD ANIMATION
-========================================= */
+    .insight-card {
+        padding: 40px;
+    }
 
-.insight-card {
-    background: #ffffff;
-    padding: 60px;
-    border-radius: 28px;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
-    border: 1px solid #f1f1f1;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    .insight-card p {
+        font-size: 18px;
+    }
 }
 
-/* Hover Lift */
+@media (max-width: 600px) {
 
-.insight-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 35px 80px rgba(0,0,0,0.12);
+    .insight-section {
+        padding: 90px 20px;
+    }
+
+    .insight-title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .insight-card {
+        padding: 28px;
+    }
+
+    .insight-card p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
 }
-
-/* Soft Glow Layer */
-
-.card-glow {
-    position: absolute;
-    top: -100px;
-    right: -100px;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(14,120,190,0.15), transparent 60%);
-    opacity: 0.4;
-    animation: breathe 6s ease-in-out infinite;
-}
-
-@keyframes breathe {
-    0% { opacity: 0.2; transform: scale(1); }
-    50% { opacity: 0.4; transform: scale(1.05); }
-    100% { opacity: 0.2; transform: scale(1); }
-}
-
-/* Illustration Watermark */
-
-.card-illustration {
-    position: absolute;
-    bottom: -40px;
-    right: -40px;
-    width: 220px;
-    height: 220px;
-    background: url("../images/mandala-corner.svg") no-repeat;
-    background-size: contain;
-    opacity: 0.05;
-    pointer-events: none;
-    animation: slowRotate 60s linear infinite;
-}
-
-@keyframes slowRotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-.highlight-word {
-    position: relative;
-    display: inline-block;
-}
-
-.hand-underline {
-    position: absolute;
-    left: 0;
-    bottom: -14px;
-    width: 100%;
-    height: 20px;
-}
-
-.hand-underline path {
-    stroke-dasharray: 1;
-    stroke-dashoffset: 1;
-    transition: stroke-dashoffset 1.2s ease;
-}
-
-.insight-section.active .hand-underline path {
-    stroke-dashoffset: 0;
-}
-.insight-left {
-    max-width: 720px;
-}
-
-.insight-left h2 {
-    line-height: 1.05;
-    letter-spacing: -0.5px;
-}
-
