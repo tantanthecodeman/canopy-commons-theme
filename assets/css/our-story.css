@@ -100,7 +100,7 @@ body.page-template-page-our-story .nav-pill .nav-current a {
     gap: 18px;
 }
 
-.btn-primary {
+.btn-primary_1 {
     background: #0E78BE;
     color: white;
     padding: 12px 26px;
@@ -110,12 +110,12 @@ body.page-template-page-our-story .nav-pill .nav-current a {
     transition: all 0.25s ease;
 }
 
-.btn-primary:hover {
+.btn-primary_1:hover {
     background: #0c65a2;
     transform: translateY(-2px);
 }
 
-.btn-secondary {
+.btn-secondary_1 {
     background: rgba(255,255,255,0.12);
     backdrop-filter: blur(6px);
     border: 1px solid rgba(255,255,255,0.3);
@@ -127,7 +127,7 @@ body.page-template-page-our-story .nav-pill .nav-current a {
     transition: all 0.25s ease;
 }
 
-.btn-secondary:hover {
+.btn-secondary_1:hover {
     background: rgba(255,255,255,0.2);
 }
 body.page-template-page-our-story .site-header {
@@ -162,8 +162,8 @@ body.page-template-page-our-story .nav-container {
         gap: 14px;
     }
 
-    .btn-primary,
-    .btn-secondary {
+    .btn-primary_1,
+    .btn-secondary_1 {
         width: 100%;
         text-align: center;
     }
@@ -196,7 +196,7 @@ body.page-template-page-our-story .site-header.scrolled {
     align-items: center;
 }
 
-.problem-text h2 {
+.problem-text_1 h2 {
     font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
@@ -204,7 +204,7 @@ body.page-template-page-our-story .site-header.scrolled {
     color: #0E1B2B;
 }
 
-.problem-text p {
+.problem-text_1 p {
     font-size: 1.05rem;
     line-height: 1.8;
     color: #4b5563;
@@ -229,11 +229,11 @@ body.page-template-page-our-story .site-header.scrolled {
         gap: 60px;
     }
 
-    .problem-text h2 {
+    .problem-text_1 h2 {
         font-size: 2rem;
     }
 
-    .problem-text p {
+    .problem-text_1 p {
         font-size: 0.95rem;
     }
 
@@ -260,7 +260,7 @@ body.page-template-page-our-story .site-header.scrolled {
     z-index: -1;
 }
 
-.problem-text h2 {
+.problem-text_1 h2 {
     position: relative;
     font-size: 3rem;
     font-weight: 700;
@@ -271,37 +271,58 @@ body.page-template-page-our-story .site-header.scrolled {
    OUR STORY — QUESTION SECTION
 ==================================== */
 
+/* ====================================
+   OUR STORY — QUESTION SECTION
+==================================== */
+
 .our-story-question {
     padding: 160px 0;
-    background: linear-gradient(
-        to bottom,
-        #fdf6f8 0%,
-        #f8f0f3 100%
-    );
+    background: linear-gradient(to bottom, #fdf6f8 0%, #f8f0f3 100%);
     position: relative;
     overflow: hidden;
 }
 
-.question-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
+/* Soft depth blob */
+.our-story-question::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: rgba(218,101,134,0.08);
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: 0;
 }
 
+.question-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+}
+
+/* Accent line */
 .question-accent {
-    width: 80px;
+    width: 0;
     height: 6px;
     background: #F2D377;
     border-radius: 10px;
     margin-bottom: 2.5rem;
+    transition: width 0.8s ease;
 }
 
+.reveal-on-scroll.active .question-accent {
+    width: 80px;
+}
+
+/* Typography */
 .question-content h2 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 700;
     line-height: 1.2;
-    color: #0E1B2B;
     margin-bottom: 2rem;
+    color: #0E1B2B;
 }
 
 .question-content p {
@@ -310,17 +331,21 @@ body.page-template-page-our-story .site-header.scrolled {
     color: #4b5563;
     max-width: 700px;
 }
-.our-story-question::before {
-    content: "";
+
+/* Madhubani decoration */
+.question-madhubani {
     position: absolute;
-    top: -150px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: rgba(218,101,134,0.08);
-    border-radius: 50%;
-    filter: blur(120px);
+    bottom: -40px;
+    right: -40px;
+    width: 300px;
+    opacity: 0.04;
+    pointer-events: none;
 }
+
+.question-madhubani img {
+    width: 100%;
+}
+
 @media (max-width: 900px) {
 
     .our-story-question {
@@ -335,3 +360,95 @@ body.page-template-page-our-story .site-header.scrolled {
         font-size: 1rem;
     }
 }
+/* ====================================
+   OUR STORY — BELIEF SECTION
+==================================== */
+
+.our-story-belief {
+    padding: 160px 0;
+    background: #f7f9fc;
+    position: relative;
+    overflow: hidden;
+}
+
+.belief-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.belief-card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(25px);
+    border-radius: 32px;
+    padding: 100px 80px;
+    box-shadow: 0 40px 80px rgba(0,0,0,0.08);
+    text-align: center;
+    position: relative;
+}
+
+.belief-card h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2.5rem;
+    color: #0E1B2B;
+}
+
+.belief-sub {
+    font-size: 2rem;
+    font-style: italic;
+    color: #6b7280;
+    margin-bottom: 3rem;
+}
+
+/* Word container */
+/* Word container */
+.rotating-word-wrapper {
+    position: relative;
+    height: 90px;
+    overflow: hidden;
+}
+
+/* Base state */
+.rotating-word {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    font-size: 3.5rem;
+    font-weight: 800;
+    transition:
+        opacity 0.5s ease,
+        transform 0.5s ease;
+}
+/* Brand colors per word */
+.rotating-word:nth-child(1) { color: #0E78BE; }   /* Researched - Blue */
+.rotating-word:nth-child(2) { color: #DA6586; }   /* Shared - Pink */
+.rotating-word:nth-child(3) { color: #C47A00; }   /* Inclusive - Yellow */
+.rotating-word:nth-child(4) { color: #0E78BE; }   /* Interactive - Blue */
+.rotating-word:nth-child(5) { color: #DA6586; }   /* Grounded - Pink */
+
+
+/* Active word */
+.rotating-word.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth exit */
+.rotating-word.exit {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+@keyframes wordGlow {
+    0%   { text-shadow: 0 0 0 currentColor; }
+    50%  { text-shadow: 0 0 0px currentColor; }
+    100% { text-shadow: 0 0 0 currentColor; }
+}
+
+.rotating-word.active {
+    animation: wordGlow 1.4s ease;
+}
+
+

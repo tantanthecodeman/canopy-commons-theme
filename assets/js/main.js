@@ -319,6 +319,35 @@ if (rotatingWord) {
 
     }, 2500);
 }
+document.addEventListener("DOMContentLoaded", function () {
+
+    const rotatingWords = document.querySelectorAll('.rotating-word');
+
+    if (!rotatingWords.length) return;
+
+    let currentIndex = 0;
+
+    function rotateWords() {
+
+        const current = rotatingWords[currentIndex];
+        current.classList.remove('active');
+        current.classList.add('exit');
+
+        setTimeout(() => {
+            current.classList.remove('exit');
+
+            currentIndex = (currentIndex + 1) % rotatingWords.length;
+
+            rotatingWords[currentIndex].classList.add('active');
+        }, 400); // exit animation duration
+    }
+
+    rotatingWords[0].classList.add('active');
+
+    setInterval(rotateWords, 2200); // Faster cycle
+
+});
+
 
 
 
