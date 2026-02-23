@@ -1,0 +1,64 @@
+.gi-hero {
+    padding: 140px 60px 80px;
+    background: linear-gradient(135deg, #FFF9E6, #FDE8EE);
+}
+
+.gi-container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.gi-hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+}
+
+.gi-subtitle {
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.gi-section {
+    padding: 100px 60px 140px;
+    background: #ffffff;
+}
+
+.gi-block {
+    margin-bottom: 70px;
+}
+
+.gi-block h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.gi-block p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.gi-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.gi-list li {
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.gi-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #DA6586;
+}
+
+.gi-cta {
+    margin-top: 60px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}

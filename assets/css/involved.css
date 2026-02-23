@@ -1,0 +1,280 @@
+.involved-hero {
+    padding: 120px 40px 60px;
+    background: #f9fafb;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0E78BE;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.involved-hero h1 {
+    font-size: 52px;
+    font-weight: 800;
+    line-height: 1.2;
+    max-width: 700px;
+}
+
+.involved-content {
+    padding: 80px 40px 120px;
+    background: white;
+}
+
+.two-col {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 80px;
+}
+
+.left-col h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.left-col p {
+    color: #4b5563;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.offer-card {
+    background: #f9fafb;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+}
+
+.offer-card h3 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.offer-card ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.offer-card li {
+    margin-bottom: 14px;
+    line-height: 1.6;
+    color: #374151;
+}
+
+.primary-btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.35s ease;
+    border: none;
+}
+
+
+@media (max-width: 900px) {
+    .two-col {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .involved-hero h1 {
+        font-size: 36px;
+    }
+}
+/* =====================================
+   HEADER COLOR BLOCKS
+===================================== */
+
+.involved-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.involved-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    z-index: 0;
+    opacity: 0.12;
+}
+
+.involved-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* =====================================
+   HEADER COLOR BLOCK
+===================================== */
+
+.involved-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.involved-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    opacity: 0.12;
+    z-index: 0;
+}
+
+.involved-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Theme Colors */
+
+.involved-page.theme-blue .involved-hero::before {
+    background: #0E78BE;
+}
+
+.involved-page.theme-yellow .involved-hero::before {
+    background: #F2D377;
+}
+
+.involved-page.theme-pink .involved-hero::before {
+    background: #E76F9F;
+}
+
+.involved-page.theme-green .involved-hero::before {
+    background: #3CB371;
+}
+
+
+/* =====================================
+   GLOW SYSTEM
+===================================== */
+
+.offer-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.offer-card::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: -40px;
+    right: -40px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18;
+    z-index: 0;
+    animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+.offer-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Theme Glow Colors */
+
+.involved-page.theme-blue .offer-card::after {
+    background: #0E78BE;
+}
+
+.involved-page.theme-yellow .offer-card::after {
+    background: #F2D377;
+}
+
+.involved-page.theme-pink .offer-card::after {
+    background: #E76F9F;
+}
+
+.involved-page.theme-green .offer-card::after {
+    background: #3CB371;
+}
+
+@keyframes glowPulse {
+    from {
+        transform: scale(1);
+        opacity: 0.16;
+    }
+    to {
+        transform: scale(1.15);
+        opacity: 0.28;
+    }
+}
+
+
+/* =====================================
+   HOVER ANIMATION
+===================================== */
+
+.offer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.offer-card:hover::after {
+    transform: scale(1.25);
+    opacity: 0.35;
+}
+/* =====================================
+   THEME BUTTON COLORS
+===================================== */
+
+.involved-page.theme-blue .primary-btn {
+    background: linear-gradient(135deg, #0E78BE, #0a5e96);
+    color: white;
+    box-shadow: 0 10px 20px rgba(14, 120, 190, 0.25);
+}
+
+.involved-page.theme-yellow .primary-btn {
+    background: linear-gradient(135deg, #F2D377, #e5bf55);
+    color: #1f2937;
+    box-shadow: 0 10px 20px rgba(242, 211, 119, 0.35);
+}
+
+.involved-page.theme-pink .primary-btn {
+    background: linear-gradient(135deg, #E76F9F, #d45587);
+    color: white;
+    box-shadow: 0 10px 20px rgba(231, 111, 159, 0.3);
+}
+
+.involved-page.theme-green .primary-btn {
+    background: linear-gradient(135deg, #3CB371, #2d8e58);
+    color: white;
+    box-shadow: 0 10px 20px rgba(60, 179, 113, 0.3);
+}
+.primary-btn:hover {
+    transform: translateY(-3px);
+}
+
+.involved-page.theme-blue .primary-btn:hover {
+    box-shadow: 0 18px 30px rgba(14, 120, 190, 0.35);
+}
+
+.involved-page.theme-yellow .primary-btn:hover {
+    box-shadow: 0 18px 30px rgba(242, 211, 119, 0.45);
+}
+
+.involved-page.theme-pink .primary-btn:hover {
+    box-shadow: 0 18px 30px rgba(231, 111, 159, 0.4);
+}
+
+.involved-page.theme-green .primary-btn:hover {
+    box-shadow: 0 18px 30px rgba(60, 179, 113, 0.4);
+}
