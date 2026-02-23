@@ -113,10 +113,16 @@
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 60px;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 80px;
+    align-items: flex-start;
 }
-
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
 .footer-col h4 {
     font-size: 14px;
     font-weight: 700;
@@ -149,26 +155,47 @@
 }
 
 .footer-logo {
-    height: 40px;
+    height: 60px;
+    width:150px;
     margin-bottom: 20px;
 }
 
 .social-links {
-    margin-top: 20px;
+    margin-top: 25px;
     display: flex;
-    gap: 12px;
+    gap: 14px;
 }
 
 .social-icon {
-    width: 40px;
-    height: 40px;
-    border: 1px solid #e5e7eb;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background: #f3f4f6;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #0E78BE;
+    transition: all 0.3s ease;
 }
 
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    background: #0E78BE;
+    color: white;
+}
+.design-logo {
+    width:150px;
+    height:100px;
+    object-fit: contain;
+    display: block;
+}
+.design-logo:hover {
+    opacity: 1;
+}
 /* ======================================
    FOOTER BOTTOM
 ====================================== */
@@ -247,4 +274,79 @@
     background: #e0f2fe;
     border-color: #c7e6ff;
     color: #0E78BE;
+}
+/* ======================================
+   FOOTER REFINEMENT
+====================================== */
+
+.footer-links {
+    padding: 100px 40px;
+    background: #ffffff;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 60px;
+}
+
+/* Social more prominent */
+
+.social-links {
+    margin-top: 10px;
+    display: flex;
+    gap: 18px;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    background: #f3f4f6;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0E78BE;
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-icon:hover {
+    background: #b6bbbe;
+    color: white;
+}
+
+/* Design Credits */
+
+.design-credits {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.design-org span {
+    display: block;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.design-logo {
+    width: 140px;
+    opacity: 0.85;
+    transition: 0.3s ease;
+}
+
+.design-logo:hover {
+    opacity: 1;
+}
+.brand-col p {
+    line-height: 1.7;
+    max-width: 260px;
 }
