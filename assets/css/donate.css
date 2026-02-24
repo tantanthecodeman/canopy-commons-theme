@@ -1,0 +1,281 @@
+.donate-page {
+    background: #ffffff;
+}
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.container.narrow {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.donate-hero {
+    padding: 100px 40px 100px;
+    background: linear-gradient(135deg, #FFF9E6 0%, #FDE8EE 100%);
+    position: relative;
+    overflow: hidden;
+}
+.donate-section-block + .donate-section-block {
+    border-top: 1px solid rgba(0,0,0,0.04);
+}
+.donate-hero::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(14,120,190,0.15), transparent 60%);
+    top: -150px;
+    right: -150px;
+    filter: blur(80px);
+    animation: floatGlow 8s ease-in-out infinite alternate;
+}
+@keyframes floatGlow {
+    from { transform: translateY(0px); }
+    to { transform: translateY(40px); }
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.narrow {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #0E78BE;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.donate-hero h1 {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.15;
+    max-width: 800px;
+}
+
+.hero-sub {
+    font-size: 22px;
+    margin-top: 20px;
+    color: #4b5563;
+}
+
+.donate-section-block {
+    padding: 120px 40px;
+}
+
+.donate-alt {
+    padding: 120px 40px;
+    background: #f9fafb;
+}
+
+.donate-section-block h2,
+.donate-alt h2 {
+    font-size: 34px;
+    margin-bottom: 30px;
+}
+
+.donate-section-block p,
+.donate-alt p {
+    font-size: 18px;
+    line-height: 1.9;
+    margin-bottom: 25px;
+    color: #374151;
+}
+
+.bullet-list {
+    margin: 30px 0;
+    padding-left: 20px;
+}
+
+.bullet-list li {
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.emphasis {
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.donate-cta {
+    margin-top: 50px;
+}
+
+.donate-btn {
+    background: linear-gradient(135deg, #F2D377, #e5bf55);
+    color: #1f2937;
+    padding: 16px 36px;
+    border-radius: 40px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(242, 211, 119, 0.35);
+}
+
+.donate-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 35px rgba(242, 211, 119, 0.45);
+}
+
+@media (max-width: 900px) {
+    .donate-hero h1 {
+        font-size: 38px;
+    }
+}
+.donate-section-block,
+.donate-alt {
+    position: relative;
+}
+
+.donate-section-block::before,
+.donate-alt::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 60px;
+    height: 4px;
+    background: #0E78BE;
+    transform: translateX(-50%);
+}
+.donate-section-block h2,
+.donate-alt h2 {
+    position: relative;
+    padding-left: 18px;
+}
+
+.donate-section-block h2::before,
+.donate-alt h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 28px;
+    background: #DA6586;
+    border-radius: 4px;
+}
+.highlight-block {
+    background: linear-gradient(90deg, #0E78BE10, #DA658610);
+    padding: 30px;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.donate-page {
+    text-align: left;
+}
+.donate-white {
+    background: #ffffff;
+    padding: 120px 0;
+}
+.donate-page h1,
+.donate-page h2,
+.donate-page h3,
+.donate-page p,
+.donate-page li {
+    text-align: left !important;
+}
+
+/* ==============================
+   FULL WIDTH COLOR SECTIONS
+============================== */
+
+.pink-section {
+    background: #FDF1F5;
+    position: relative;
+}
+
+.blue-section {
+    background: #EDF5FB;
+    position: relative;
+}
+
+.yellow-section {
+    background: #FFF8E7;
+    position: relative;
+}
+
+/* Add soft top & bottom padding */
+.pink-section,
+.blue-section,
+.yellow-section,
+.donate-section-block,
+.donate-alt {
+    padding: 100px 0;
+}
+.pink-section::before,
+.blue-section::before,
+.yellow-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: inherit;
+    border-bottom-left-radius: 60% 40%;
+    border-bottom-right-radius: 60% 40%;
+    z-index: 0;
+}
+
+.pink-section .container,
+.blue-section .container,
+.yellow-section .container {
+    position: relative;
+    z-index: 2;
+}
+.container.narrow {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: left;
+}
+/* =========================
+   CLEAN DONATE PAGE SYSTEM
+========================= */
+
+.donate-section-block,
+.donate-alt {
+    padding: 110px 0;
+}
+
+/* Full width alternating background system */
+
+.donate-section-block {
+    background: #ffffff;
+}
+
+.donate-alt {
+    background: #F7F9FC;
+}
+
+/* Custom color bands */
+
+.pink-section {
+    background: #FDF1F5;
+}
+
+.blue-section {
+    background: #EDF5FB;
+}
+
+.yellow-section {
+    background: #FFF8E7;
+}
+/* ===== ABSOLUTE OVERRIDE ===== */
+
+body .donate-page,
+body .donate-page * {
+    text-align: left !important;
+}
