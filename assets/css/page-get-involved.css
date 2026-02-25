@@ -1,0 +1,150 @@
+/* ======================================
+   GET INVOLVED — HERO
+====================================== */
+
+.get-involved-hero {
+    padding: 130px 0 120px 0;
+    background: linear-gradient(
+        135deg,
+        rgba(242,211,119,0.15),
+        rgba(218,101,134,0.12),
+        rgba(14,120,190,0.12)
+    );
+}
+
+.get-involved-hero h1 {
+    font-size: 4.2rem;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin: 20px 0 30px 0;
+}
+
+.get-involved-hero p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    max-width: 700px;
+    color: #4b5563;
+}
+
+@media (max-width: 900px) {
+    .get-involved-hero {
+        padding: 120px 0 80px 0;
+    }
+
+    .get-involved-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .get-involved-hero p {
+        font-size: 1rem;
+    }
+}
+
+/* ======================================
+   GET INVOLVED — PATHWAYS
+====================================== */
+
+.get-involved-pathways {
+    padding: 120px 0 160px 0;
+    background: #ffffff;
+}
+
+.pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+}
+
+.pathway-card {
+    background: #ffffff;
+    border-radius: 28px;
+    padding: 50px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.pathway-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 35px 90px rgba(0,0,0,0.1);
+}
+
+.pathway-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.pathway-card p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #4b5563;
+    margin-bottom: 25px;
+}
+
+.pathway-link {
+    font-weight: 600;
+}
+.pathway-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+}
+
+.blue-accent::before { background: #0E78BE; }
+.yellow-accent::before { background: #F2D377; }
+.pink-accent::before { background: #DA6586; }
+.green-accent::before { background: #2E9E5B; }
+
+@media (max-width: 1000px) {
+
+    .pathways-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pathway-card {
+        padding: 35px;
+    }
+
+    .pathway-card h3 {
+        font-size: 1.4rem;
+    }
+
+    .pathway-card p {
+        font-size: 1rem;
+    }
+}
+/* ======================================
+   PATHWAY LINK HOVER UNDERLINE
+====================================== */
+
+.pathway-link {
+    position: relative;
+    display: inline-block;
+}
+
+/* Animated underline */
+.pathway-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: currentColor;
+    transition: width 0.3s ease;
+}
+
+/* Trigger on card hover */
+.pathway-card:hover .pathway-link::after {
+    width: 100%;
+}
