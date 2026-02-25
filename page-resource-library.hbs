@@ -26,48 +26,55 @@
 
         <div class="resource-grid">
 
-            {{#foreach posts limit="12"}}
+            {{#get "posts" limit="12" include="tags"}}
 
-                <article class="resource-card">
+                {{#if posts}}
 
-                    {{#if feature_image}}
-                        <div class="resource-image">
-                            <img src="{{feature_image}}" alt="{{title}}">
-                        </div>
-                    {{/if}}
+                    {{#foreach posts}}
 
-                    <div class="resource-content">
+                        <article class="resource-card">
 
-                        {{#foreach tags limit="1"}}
-                            <span class="resource-tag">{{name}}</span>
-                        {{/foreach}}
+                            {{#if feature_image}}
+                                <div class="resource-image">
+                                    <img src="{{feature_image}}" alt="{{title}}">
+                                </div>
+                            {{/if}}
 
-                        <h3>
-                            <a href="{{url}}">{{title}}</a>
-                        </h3>
+                            <div class="resource-content">
 
-                        <p>{{excerpt words="20"}}</p>
+                                {{#foreach tags limit="1"}}
+                                    <span class="resource-tag">{{name}}</span>
+                                {{/foreach}}
 
-                        <span class="resource-link">
-                            Read more →
-                        </span>
+                                <h3>
+                                    <a href="{{url}}">{{title}}</a>
+                                </h3>
 
+                                <p>{{excerpt words="20"}}</p>
+
+                                <span class="resource-link">
+                                    Read more →
+                                </span>
+
+                            </div>
+
+                        </article>
+
+                    {{/foreach}}
+
+                {{else}}
+
+                    <div class="resource-empty">
+                        <h3>Resources coming soon</h3>
+                        <p>
+                            We’re building a library of civic toolkits and case studies.
+                            Check back soon.
+                        </p>
                     </div>
 
-                </article>
+                {{/if}}
 
-            {{else}}
-
-                <div class="resource-empty">
-                    <h3>Resources coming soon</h3>
-                    <p>
-                        We’re building a library of civic toolkits,
-                        case studies, and learning modules.
-                        Check back soon.
-                    </p>
-                </div>
-
-            {{/foreach}}
+            {{/get}}
 
         </div>
 

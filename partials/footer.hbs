@@ -46,93 +46,136 @@
 
     <section class="footer-links">
 
-    <div class="footer-container">
+        <div class="footer-container">
 
-        <!-- COLUMN 1: BRAND + SOCIAL -->
-        <div class="footer-col brand-col">
+            <!-- BRAND COLUMN -->
+            <div class="footer-col brand-col">
 
-            {{#if @site.logo}}
-                <img src="{{@site.logo}}" alt="{{@site.title}}" class="footer-logo">
-            {{/if}}
+                {{#if @site.logo}}
+                    <img src="{{@site.logo}}" alt="{{@site.title}}" class="footer-logo">
+                {{/if}}
 
-            <p>
-                Legal entity: <strong>Avantika Foundation</strong><br>
-                Dedicated to strengthening civic agency through design, research, and organizing.
-            </p>
+                <p>
+                    Legal entity: <strong>Avantika Foundation</strong><br>
+                    Dedicated to strengthening civic agency through design, research, and organizing.
+                </p>
 
-            <div class="social-links">
+                <div class="social-links">
 
-                <a href="https://www.instagram.com/canopy.commons"
-                   target="_blank"
-                   class="social-icon"
-                   aria-label="Instagram">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <rect x="2" y="2" width="20" height="20" rx="5"/>
-                        <circle cx="12" cy="12" r="4"/>
-                        <circle cx="17" cy="7" r="1.5"/>
-                    </svg>
-                </a>
+                    <a href="https://www.instagram.com/canopy.commons"
+                       target="_blank"
+                       rel="noopener"
+                       class="social-icon"
+                       aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <rect x="2" y="2" width="20" height="20" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17" cy="7" r="1.5"/>
+                        </svg>
+                    </a>
 
-                <a href="https://www.linkedin.com/company/canopy-commons/"
-                   target="_blank"
-                   class="social-icon"
-                   aria-label="LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                        <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-2-2 2 2 0 00-2 2v6h-4v-12h4v2"/>
-                        <rect x="2" y="9" width="4" height="12"/>
-                        <circle cx="4" cy="4" r="2"/>
-                    </svg>
-                </a>
+                    <a href="https://www.linkedin.com/company/canopy-commons/"
+                       target="_blank"
+                       rel="noopener"
+                       class="social-icon"
+                       aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                            <path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-2-2 2 2 0 00-2 2v6h-4v-12h4v2"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS (Ghost Dynamic) -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+
+                {{#if @site.secondary_navigation}}
+                    <ul>
+                        {{#foreach @site.secondary_navigation}}
+                            <li>
+                                <a href="{{url}}">{{label}}</a>
+                            </li>
+                        {{/foreach}}
+                    </ul>
+                {{/if}}
+
+            </div>
+
+
+            <!-- CONTACT -->
+            <div class="footer-col">
+                <h4>Contact</h4>
+
+                <p>Questions about our work?</p>
+
+                {{#if @site.email}}
+                    <a href="mailto:{{@site.email}}" class="email-link">
+                        {{@site.email}}
+                    </a>
+                {{else}}
+                    <a href="mailto:divya@canopy-commons.org" class="email-link">
+                        divya@canopy-commons.org
+                    </a>
+                {{/if}}
+
+            </div>
+
+
+            <!-- WEBSITE DESIGN -->
+            <div class="footer-col">
+                <h4>Website Design</h4>
+
+                <div class="design-credits">
+
+                    <div class="design-org">
+                        <span>Oasis</span>
+                        <img src="{{asset "images/oasis-logo.png"}}"
+                             alt="Oasis"
+                             class="design-logo">
+                    </div>
+
+                    <div class="design-org">
+                        <span>Terregeneration Solutions</span>
+                        <img src="{{asset "images/design_logo.png"}}"
+                             alt="Terregeneration Solutions"
+                             class="design-logo">
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-        <!-- COLUMN 2: QUICK LINKS -->
-        <div class="footer-col">
-            <h4>QUICK LINKS</h4>
-            <ul>
-                <li><a href="/legal-entity/">Legal Entity – Avantika Foundation</a></li>
-                <li><a href="/disclosures/">Disclosures</a></li>
-                <li><a href="/policies/">Policies (TBA)</a></li>
-                <li><a href="mailto:divya@canopy-commons.org">Contact Us</a></li>
-            </ul>
-        </div>
+    </section>
 
-        <!-- COLUMN 3: CONTACT -->
-        <div class="footer-col">
-            <h4>CONTACT</h4>
-            <p>Questions about our work?</p>
 
-            <a href="mailto:divya@canopy-commons.org" class="email-link">
-                divya@canopy-commons.org
-            </a>
-        </div>
+    <!-- ===================================== -->
+    <!-- FOOTER BOTTOM -->
+    <!-- ===================================== -->
 
-        <!-- COLUMN 4: WEBSITE DESIGN -->
-        <div class="footer-col">
-            <h4>WEBSITE DESIGN</h4>
+    <section class="footer-bottom">
 
-            <div class="design-credits">
+        <div class="footer-bottom-container">
 
-                <div class="design-org">
-                    <span>Oasis</span>
-                    <img src="{{asset "images/oasis-logo.png"}}" 
-                         alt="Oasis"
-                         class="design-logo">
-                </div>
+            <div class="copyright">
+                © {{date format="YYYY"}} Avantika Foundation. All rights reserved.
+            </div>
 
-                <div class="design-org">
-                    <span>Terregeneration Solutions</span>
-                    <img src="{{asset "images/design_logo.png"}}" 
-                         alt="Terregeneration Solutions"
-                         class="design-logo">
-                </div>
-
+            <div class="footer-legal">
+                <a href="/privacy-policy/">Privacy Policy</a>
+                <a href="/cookie-policy/">Cookie Policy</a>
+                <a href="/terms-of-service/">Terms of Service</a>
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+</footer>

@@ -1,40 +1,101 @@
 <div class="diagram-wrapper reveal-on-scroll">
 
-    <div class="ring-layer ring-outer">
-        <svg viewBox="0 0 650 650">
-            <circle cx="325" cy="325" r="300" fill="none"/>
-        </svg>
-    </div>
+<svg class="hero-mandala" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
 
-    <div class="ring-layer ring-middle">
-        <svg viewBox="0 0 650 650">
-            <circle cx="325" cy="325" r="240" fill="none"/>
-        </svg>
-    </div>
+  <defs>
 
-    <div class="ring-layer ring-inner">
-        <svg viewBox="0 0 650 650">
-            <circle cx="325" cy="325" r="180" fill="none"/>
-        </svg>
-    </div>
+    <!-- Lotus -->
+    <g id="lotus">
+      <path d="M0,-18 C6,-8 6,8 0,18 C-6,8 -6,-8 0,-18Z" fill="#D97706"></path>
+      <ellipse cx="0" cy="0" rx="14" ry="5" fill="#F59E0B"></ellipse>
+    </g>
 
-    <!-- Community Sabha Center -->
-    <div class="diagram-core">
-        <div class="sabha-circle">
-            <div class="sabha-dot"></div>
-        </div>
-    </div>
+    <!-- Diamond -->
+    <g id="diamond">
+      <polygon points="0,-8 8,0 0,8 -8,0" fill="#D97706"></polygon>
+    </g>
 
-    <!-- Static Civic Figures (NOT rotating) -->
-    <div class="civic-layer">
-        <div class="civic-figure blue" style="top:4%; left:50%;"></div>
-        <div class="civic-figure pink" style="top:20%; right:8%;"></div>
-        <div class="civic-figure yellow" style="top:50%; right:4%;"></div>
-        <div class="civic-figure blue" style="bottom:15%; right:20%;"></div>
-        <div class="civic-figure pink" style="bottom:4%; left:50%;"></div>
-        <div class="civic-figure yellow" style="bottom:20%; left:8%;"></div>
-        <div class="civic-figure blue" style="top:50%; left:4%;"></div>
-        <div class="civic-figure pink" style="top:25%; left:15%;"></div>
-    </div>
+    <!-- People -->
+    <g id="person-blue">
+      <circle cx="0" cy="-18" r="10" fill="#2E6F95"></circle>
+      <path d="M-18,10 Q0,-5 18,10 L18,22 L-18,22 Z" fill="#2E6F95"></path>
+    </g>
+
+    <g id="person-red">
+      <circle cx="0" cy="-18" r="10" fill="#E76F51"></circle>
+      <path d="M-18,10 Q0,-5 18,10 L18,22 L-18,22 Z" fill="#E76F51"></path>
+    </g>
+
+    <g id="person-yellow">
+      <circle cx="0" cy="-18" r="10" fill="#E9C46A"></circle>
+      <path d="M-18,10 Q0,-5 18,10 L18,22 L-18,22 Z" fill="#E9C46A"></path>
+    </g>
+
+  </defs>
+
+  <!-- ROTATING GROUP 1 -->
+  <g class="rotate-slow">
+
+    <circle cx="400" cy="400" r="290"
+            fill="none"
+            stroke="#D97706"
+            stroke-width="2"
+            stroke-dasharray="4 14"/>
+
+  </g>
+
+  <!-- ROTATING GROUP 2 -->
+  <g class="rotate-medium">
+
+    <circle cx="400" cy="400" r="230"
+            fill="none"
+            stroke="#2E6F95"
+            stroke-width="3"/>
+
+  </g>
+
+  <!-- ROTATING GROUP 3 -->
+  <g class="rotate-fast">
+
+    <circle cx="400" cy="400" r="180"
+            fill="none"
+            stroke="#D97706"
+            stroke-width="3"
+            stroke-dasharray="2 18"/>
+
+    <!-- Diamond Ring -->
+    <use href="#diamond" transform="translate(400 250)"/>
+    <use href="#diamond" transform="translate(550 400)"/>
+    <use href="#diamond" transform="translate(400 550)"/>
+    <use href="#diamond" transform="translate(250 400)"/>
+
+    <!-- Lotus Ring -->
+    <use href="#lotus" transform="translate(400 300)"/>
+    <use href="#lotus" transform="translate(400 500) rotate(180)"/>
+    <use href="#lotus" transform="translate(300 400) rotate(-90)"/>
+    <use href="#lotus" transform="translate(500 400) rotate(90)"/>
+
+  </g>
+
+  <!-- STATIC CENTER -->
+  <circle cx="400" cy="400" r="35" fill="#E84393"/>
+  <circle cx="400" cy="400" r="60"
+          fill="none"
+          stroke="#D97706"
+          stroke-width="6"/>
+  <circle cx="400" cy="400" r="100"
+          fill="none"
+          stroke="#D97706"
+          stroke-width="4"/>
+
+  <!-- STATIC PEOPLE -->
+  <use href="#person-blue" transform="translate(400 110)"/>
+  <use href="#person-red" transform="translate(660 260)"/>
+  <use href="#person-yellow" transform="translate(660 540)"/>
+  <use href="#person-blue" transform="translate(400 690)"/>
+  <use href="#person-red" transform="translate(140 540)"/>
+  <use href="#person-yellow" transform="translate(140 260)"/>
+
+</svg>
 
 </div>

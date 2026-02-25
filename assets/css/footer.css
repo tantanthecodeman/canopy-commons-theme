@@ -104,35 +104,32 @@
    FOOTER LINKS
 ====================================== */
 
+/* ==============================
+   CLEAN FOOTER STRUCTURE
+============================== */
+
 .footer-links {
-    padding: 100px 40px;
-    background: white;
+    padding: 100px 40px 70px;
+    background: #ffffff;
+    border-top: 1px solid #f3f4f6;
 }
 
 .footer-container {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    gap: 80px;
-    align-items: flex-start;
-}
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 20px;
-}
-.footer-col h4 {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 20px;
+    grid-template-columns: 1.3fr 1fr 1fr 1fr;
+    gap: 60px;
+    align-items: start;
 }
 
-.footer-col p,
-.footer-col small {
-    color: #6b7280;
-    line-height: 1.6;
+.footer-col h4 {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    color: #111827;
 }
 
 .footer-col ul {
@@ -147,63 +144,27 @@
 .footer-col a {
     text-decoration: none;
     color: #6b7280;
-    transition: 0.3s ease;
+    transition: 0.25s ease;
 }
 
 .footer-col a:hover {
     color: #0E78BE;
 }
 
-.footer-logo {
-    height: 60px;
-    width:150px;
-    margin-bottom: 20px;
+.brand-col p {
+    max-width: 280px;
+    line-height: 1.7;
+    color: #6b7280;
 }
 
-.social-links {
-    margin-top: 25px;
-    display: flex;
-    gap: 14px;
-}
-
-.social-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #f3f4f6;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0E78BE;
-    transition: all 0.3s ease;
-}
-
-.social-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.social-icon:hover {
-    background: #0E78BE;
-    color: white;
-}
-.design-logo {
-    width:150px;
-    height:100px;
-    object-fit: contain;
-    display: block;
-}
-.design-logo:hover {
-    opacity: 1;
-}
-/* ======================================
-   FOOTER BOTTOM
-====================================== */
+/* ==============================
+   FOOTER BOTTOM BAR
+============================== */
 
 .footer-bottom {
     border-top: 1px solid #f3f4f6;
-    padding: 30px 40px;
-    background: white;
+    padding: 28px 40px;
+    background: #ffffff;
 }
 
 .footer-bottom-container {
@@ -216,33 +177,67 @@
 
 .footer-legal {
     display: flex;
-    gap: 30px;
+    gap: 28px;
 }
 
-/* ======================================
+.footer-legal a {
+    font-size: 14px;
+    color: #6b7280;
+    text-decoration: none;
+}
+
+.footer-legal a:hover {
+    color: #0E78BE;
+}
+/* ===============================
+   SOCIAL ICON SIZE FIX
+=============================== */
+
+.social-links {
+    margin-top: 16px;
+    display: flex;
+    gap: 14px;
+}
+
+.social-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b7280;
+    background: #ffffff;
+    transition: 0.25s ease;
+}
+.footer-logo{
+    width:150px;
+    height:auto;
+    margin-top:5px;
+}
+.social-icon svg {
+    width: 25px;
+    height: 25px;
+}
+
+.social-icon:hover {
+    background: #f0f9ff;
+    border-color: #0E78BE;
+    color: #0E78BE;
+}
+/* ==============================
    RESPONSIVE
-====================================== */
+============================== */
 
 @media (max-width: 1024px) {
     .footer-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
     }
 }
 
 @media (max-width: 768px) {
-
-    .donate-section {
-        padding: 90px 20px;
-    }
-
-    .donate-section h2 {
-        font-size: 34px;
-    }
-
-    .donate-section p {
-        font-size: 16px;
-    }
-
     .footer-container {
         grid-template-columns: 1fr;
     }
@@ -252,101 +247,9 @@
         gap: 15px;
         text-align: center;
     }
-}
-.social-icon svg {
-    width: 18px;
-    height: 18px;
-}
 
-.social-icon {
-    width: 42px;
-    height: 42px;
-    border: 1px solid #e5e7eb;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #6b7280;
-    transition: 0.3s ease;
-}
-
-.social-icon:hover {
-    background: #e0f2fe;
-    border-color: #c7e6ff;
-    color: #0E78BE;
-}
-/* ======================================
-   FOOTER REFINEMENT
-====================================== */
-
-.footer-links {
-    padding: 100px 40px;
-    background: #ffffff;
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 60px;
-}
-
-/* Social more prominent */
-
-.social-links {
-    margin-top: 10px;
-    display: flex;
-    gap: 18px;
-}
-
-.social-icon {
-    width: 48px;
-    height: 48px;
-    background: #f3f4f6;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #0E78BE;
-    transition: all 0.3s ease;
-}
-
-.social-icon svg {
-    width: 20px;
-    height: 20px;
-}
-
-.social-icon:hover {
-    background: #b6bbbe;
-    color: white;
-}
-
-/* Design Credits */
-
-.design-credits {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.design-org span {
-    display: block;
-    font-size: 13px;
-    color: #6b7280;
-    margin-bottom: 6px;
-}
-
-.design-logo {
-    width: 140px;
-    opacity: 0.85;
-    transition: 0.3s ease;
-}
-
-.design-logo:hover {
-    opacity: 1;
-}
-.brand-col p {
-    line-height: 1.7;
-    max-width: 260px;
+    .footer-legal {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
