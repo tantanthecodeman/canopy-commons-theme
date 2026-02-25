@@ -1,0 +1,112 @@
+/* ==========================================
+   HOMEPAGE PARTNERS SECTION
+========================================== */
+
+.partners-home {
+    padding: 120px 0;
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.partners-header h2 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.partners-header p {
+    max-width: 600px;
+    margin: auto;
+    color: #6b7280;
+    line-height: 1.6;
+    font-size:20px;
+}
+
+/* Marquee */
+
+.partners-marquee {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+/* Soft fade edges */
+.partners-marquee::before,
+.partners-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 140px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.partners-marquee::before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+.partners-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+}
+
+.partners-track {
+    display: flex;
+    gap: 140px;
+    align-items: center;
+    animation: scrollPartners 35s linear infinite;
+}
+
+.partner-item img {
+    height: 300px;
+    width: 300px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.partner-item img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Smooth continuous scroll */
+@keyframes scrollPartners {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    .partners-home {
+        padding: 80px 0;
+    }
+
+    .partners-header h2 {
+        font-size: 28px;
+    }
+
+    .partner-item img {
+        height: 70px;
+    }
+
+    .partners-track {
+        gap: 70px;
+        animation-duration: 22s;
+    }
+}
