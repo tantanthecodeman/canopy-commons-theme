@@ -1,0 +1,76 @@
+{{!< default}}
+
+<section class="resource-hero section">
+
+    <div class="container">
+
+        <span class="section-label">RESOURCE LIBRARY</span>
+
+        <h1>
+            Tools, guides, and learning
+            for civic action.
+        </h1>
+
+        <p>
+            Explore toolkits, case studies, learning modules,
+            and practical resources to support your civic work.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="resource-grid-section section">
+
+    <div class="container">
+
+        <div class="resource-grid">
+
+            {{#foreach posts limit="12"}}
+
+                <article class="resource-card">
+
+                    {{#if feature_image}}
+                        <div class="resource-image">
+                            <img src="{{feature_image}}" alt="{{title}}">
+                        </div>
+                    {{/if}}
+
+                    <div class="resource-content">
+
+                        {{#foreach tags limit="1"}}
+                            <span class="resource-tag">{{name}}</span>
+                        {{/foreach}}
+
+                        <h3>
+                            <a href="{{url}}">{{title}}</a>
+                        </h3>
+
+                        <p>{{excerpt words="20"}}</p>
+
+                        <span class="resource-link">
+                            Read more →
+                        </span>
+
+                    </div>
+
+                </article>
+
+            {{else}}
+
+                <div class="resource-empty">
+                    <h3>Resources coming soon</h3>
+                    <p>
+                        We’re building a library of civic toolkits,
+                        case studies, and learning modules.
+                        Check back soon.
+                    </p>
+                </div>
+
+            {{/foreach}}
+
+        </div>
+
+    </div>
+
+</section>
