@@ -362,7 +362,7 @@ body {
 }
 
 
-.donate-btn {
+.donate-btn1 {
     display: flex;
     align-items: center;
     gap: 6px;
@@ -377,7 +377,7 @@ body {
     text-decoration: none !important;
 }
 
-.donate-btn:hover {
+.donate-btn1:hover {
     background: #d4eaf8;
     transform: scale(1.05);
     text-decoration: none !important;
@@ -411,7 +411,7 @@ body {
         display: none;
     }
 
-    .donate-btn {
+    .donate-btn1 {
         display: none;
     }
 

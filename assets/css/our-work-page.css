@@ -1,0 +1,307 @@
+/* ======================================
+   OUR WORK — HERO
+====================================== */
+.pillars-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.pillars-header h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #0E1B2B;
+    margin-top: 20px;
+}
+.our-work-hero1 {
+    position: relative;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background */
+.our-work-hero1 .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.our-work-hero1 .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Overlay */
+.our-work-hero1 .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.55) 50%,
+        rgba(0,0,0,0.25) 100%
+    );
+}
+
+/* Content */
+.our-work-hero1 .hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.our-work-hero1 .hero-text {
+    max-width: 750px;
+    color: white;
+    padding-top: 140px;
+}
+
+/* Match Our Story Hero Typography */
+
+.our-work-hero1 h1 {
+    font-size: 4.5rem;          /* same as Our Story */
+    font-weight: 700;           /* reduce from 800 */
+    line-height: 1.1;
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+    color:white;
+}
+
+.our-work-hero1 p {
+    font-size: 1.05rem;      /* match Our Story */
+    line-height: 1.7;
+    max-width: 600px;
+    opacity: 0.95;
+}
+
+@media (max-width: 900px) {
+
+    .our-work-hero1 {
+        min-height: 80vh;
+    }
+
+    .our-work-hero1 .hero-text {
+        padding-top: 110px;
+    }
+
+    @media (max-width: 900px) {
+
+    .our-work-hero1 h1 {
+        font-size: 2.8rem;   /* match Our Story mobile */
+    }
+
+}
+
+    .our-work-hero1 p {
+        font-size: 1rem;
+    }
+
+}
+
+/* ======================================
+   OUR WORK — PILLARS
+====================================== */
+
+.our-work-pillars {
+    padding: 160px 0;
+    background: #ffffff;
+}
+
+.pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+}
+
+.pillar-card {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 35px 35px 45px 35px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    position: relative;
+}
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 80px rgba(14,120,190,0.12);
+}
+
+.pillar-image {
+    height: 140px;
+    overflow: hidden;
+    border-radius: 16px;
+    margin-bottom: 25px;
+}
+
+.pillar-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pillar-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #0E1B2B;
+}
+
+.pillar-card ul {
+    padding-left: 18px;
+}
+
+.pillar-card li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #4b5563;
+}
+
+@media (max-width: 1100px) {
+
+    .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .pillar-card {
+        padding: 30px;
+    }
+
+}
+
+.pillar-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 6px;
+    width: 100%;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+}
+
+/* Blue */
+.blue-accent::before {
+    background: #0E78BE;
+}
+
+/* Yellow */
+.yellow-accent::before {
+    background: #F2D377;
+}
+
+/* Pink */
+.pink-accent::before {
+    background: #DA6586;
+}
+
+/* ======================================
+   OUR WORK — HOW WE WORK
+====================================== */
+
+.our-work-how {
+    position: relative;
+    padding: 160px 0;
+    background: #ffffff;
+    margin-top:-60px;
+}
+
+/* Subtle ambient glow */
+.our-work-how::before {
+    content: "";
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(
+        circle,
+        rgba(218,101,134,0.08),
+        rgba(14,120,190,0.06),
+        transparent 70%
+    );
+    filter: blur(120px);
+    z-index: 0;
+}
+
+.how-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.how-left h2 {
+    font-size: 3.2rem;
+    font-weight: 800;
+    line-height: 1.15;
+    color: #0E1B2B;
+}
+
+.how-accent {
+    width: 80px;
+    height: 6px;
+    background: #DA6586;
+    margin-top: 30px;
+    border-radius: 4px;
+}
+
+.how-list {
+    list-style: none;
+    padding: 0;
+}
+
+.how-list li {
+    font-size: 1.15rem;
+    line-height: 2;
+    margin-bottom: 2rem;
+    color: #374151;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Custom subtle marker */
+.how-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 10px;
+    height: 10px;
+    background: #0E78BE;
+    border-radius: 50%;
+}
+
+/* Final principle highlight */
+.how-highlight {
+    font-weight: 600;
+    color: #0E78BE;
+}
+
+@media (max-width: 900px) {
+
+    .our-work-how {
+        padding: 100px 0;
+    }
+
+    .how-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .how-left h2 {
+        font-size: 2.2rem;
+    }
+
+    .how-list li {
+        font-size: 1rem;
+    }
+
+}
+

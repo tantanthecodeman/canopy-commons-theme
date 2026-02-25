@@ -1,107 +1,220 @@
 {{!< default}}
 
+{{#page}}
+
 <section class="our-story-hero">
 
     <div class="hero-bg">
-        <img src="https://images.unsplash.com/photo-1555069855-e580a9adbf43?auto=format&fit=crop&w=2000&q=80" alt="Community gathering">
+
+        {{#if feature_image}}
+            <img src="{{feature_image}}" alt="{{title}}">
+        {{else}}
+            <img src="{{asset "images/our-story-hero.jpg"}}" alt="Community gathering">
+        {{/if}}
+
         <div class="hero-overlay"></div>
+
     </div>
 
     <div class="hero-inner container">
+
         <div class="hero-text">
-            <h1>Our Story</h1>
+
+
+            <h1>{{title}}</h1>
 
             <h2>
-                Participation shouldn’t feel exhausting. 
-                It should feel possible.
+                Participation today feels hard in the wrong ways.
             </h2>
 
             <p>
-                Canopy Commons exists because civic participation today feels harder than it needs to be.
-                We believe democracy should be practiced, not appealed to.
+                Canopy Commons exists because democracy has started to feel like something
+                you appeal to, not something you practice.
             </p>
 
             <div class="hero-buttons">
                 <a href="/#our-work" class="btn-primary_1">Our Work</a>
                 <a href="/#get-involved" class="btn-secondary_1">Get Involved</a>
             </div>
+
         </div>
+
     </div>
 
 </section>
 
+{{/page}}
 
 
 
-<section class="our-story-problem">
-    <div class="container problem-grid">
 
-        <div class="problem-text_1">
-            <h2>Democracy today often feels distant.</h2>
+<section class="our-story-narrative section">
 
-            <p>
-                People are told to engage, to care, to speak up — but the actual process is confusing,
-                exhausting, and often disappointing. You sign. You share. You wait. Nothing moves.
-            </p>
+    <div class="container">
 
-            <p>
-                Intent exists. What’s missing is access — to tools, to know-how, to examples of what
-                actually works. Most citizens don’t know where power lives, how decisions are made,
-                or how to meaningfully participate.
-            </p>
-        </div>
+        <span class="section-label">THE REALITY</span>
 
-        <div class="problem-visual">
-            {{> hero-diagram}}  {{!-- reuse your existing SVG component --}}
-        </div>
+        <div class="narrative-grid">
 
-    </div>
-</section>
+            <div class="narrative-heading">
+                <h2>
+                    Participation today feels hard in the wrong ways.
+                </h2>
+            </div>
 
-<section class="our-story-question">
+            <div class="narrative-body">
 
-    <div class="container question-inner reveal-on-scroll">
+                <p>
+                    People are told to engage, to care, to speak up — but the actual process
+                    of doing that is confusing, exhausting, and often disappointing.
+                    Democracy has started to feel like something you appeal to,
+                    not something you practice.
+                </p>
 
-        <div class="question-accent"></div>
+                <p>
+                    You sign. You share. You wait. Nothing moves.
+                    Or it does, briefly, and then disappears.
+                </p>
 
-        <div class="question-content">
-            <h2>Is there another way?</h2>
 
-            <p>
-                Trust is wearing thin. Digital-first campaigns feel hollow.
-                People want engagement that feels human again — grounded in place,
-                rooted in relationships, and capable of creating change.
-            </p>
-        </div>
+                <p>
+                    Most citizens don’t know where they stand in the system,
+                    who decides what, or how power really moves.
+                    The distance between those who serve and those who are being served
+                    keeps growing.
+                </p>
 
-    </div>
-
-    <div class="question-madhubani">
-        <img src="{{asset "images/madhubani.png"}}" alt="">
-    </div>
-
-</section>
-
-<section class="our-story-belief">
-
-    <div class="container belief-inner reveal-on-scroll">
-
-        <div class="belief-card">
-
-            <h2>We think there is.</h2>
-
-            <p class="belief-sub">Civic action should be</p>
-
-            <div class="rotating-word-wrapper">
-                <span class="rotating-word active">Researched</span>
-                <span class="rotating-word">Shared</span>
-                <span class="rotating-word">Inclusive</span>
-                <span class="rotating-word">Interactive</span>
-                <span class="rotating-word">Grounded in place</span>
             </div>
 
         </div>
 
+    </div>
+
+</section>
+
+<section class="our-story-question section reveal-on-scroll">
+
+    <div class="container question-container">
+
+        <span class="section-label question-label">THE QUESTION</span>
+
+        <div class="question-grid">
+
+            <div class="question-left">
+                <h2>
+                    Trust is wearing thin.
+                </h2>
+
+                <p>
+                    Digital-first campaigns feel hollow to many now.
+                    There’s fatigue. There’s hesitation.
+                    People want engagement that feels human again —
+                    grounded in place, rooted in relationships,
+                    and capable of creating change.
+                </p>
+            </div>
+
+            <div class="question-right">
+
+                <div class="question-highlight">
+
+                    <div class="highlight-accent"></div>
+
+                    <h3>
+                        Is there another way
+                        to do this?
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="our-story-belief section reveal-on-scroll">
+
+    <div class="container belief-inner">
+
+        <div class="belief-card">
+
+            <span class="section-label belief-label">OUR BELIEF</span>
+
+            <h2>
+                We think there is.
+            </h2>
+
+            <p class="belief-sub">
+                Civic action should feel
+            </p>
+
+            <div class="rotating-word-wrapper">
+
+                <span class="rotating-word blue">Researched</span>
+                <span class="rotating-word pink">Planned</span>
+                <span class="rotating-word yellow">Shared</span>
+                <span class="rotating-word blue">Inclusive</span>
+                <span class="rotating-word pink">Interactive</span>
+                <span class="rotating-word yellow">Grounded in place</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="our-story-closure section">
+
+    <div class="container closure-grid">
+
+        <div class="closure-left">
+
+            <span class="section-label closure-label">HOW WE SHOW UP</span>
+
+            <h2>
+                We lead with empathy,
+                courage, and creativity.
+            </h2>
+
+            <div class="closure-underline"></div>
+
+        </div>
+
+        <div class="closure-right">
+
+            <p>
+                Civic action shouldn’t feel intimidating or overwhelming.
+                It should feel researched, planned, and shared —
+                capable of holding power accountable
+                without shutting down conversation.
+            </p>
+
+            <p>
+                We care about engagement that is inclusive,
+                respectful, and interactive.
+                Not passive. Not extractive.
+            </p>
+
+            <p>
+                People should be able to see themselves in the system,
+                understand how to work within it,
+                challenge it, and improve it.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="container closure-emphasis">
+        <p>
+            Civic life doesn’t have to be boring.
+            It can be eye-opening. Local. Sometimes even fun.
+        </p>
     </div>
 
 </section>
