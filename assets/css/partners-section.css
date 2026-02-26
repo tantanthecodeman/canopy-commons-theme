@@ -60,14 +60,15 @@
 
 .partners-track {
     display: flex;
-    gap: 140px;
     align-items: center;
-    animation: scrollPartners 35s linear infinite;
+    gap: 140px;
+    animation: scrollPartners 40s linear infinite;
+    width: max-content;
 }
 
 .partner-item img {
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     object-fit: contain;
     flex-shrink: 0;
 }
@@ -76,6 +77,8 @@
     transform: scale(1.05);
     opacity: 1;
 }
+
+
 
 /* Smooth continuous scroll */
 @keyframes scrollPartners {
@@ -102,11 +105,14 @@
     }
 
     .partner-item img {
-        height: 70px;
+        height: 100px;
     }
 
     .partners-track {
-        gap: 70px;
-        animation-duration: 22s;
-    }
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    animation: scrollPartners 10s linear infinite;
+    width: max-content;
+}
 }

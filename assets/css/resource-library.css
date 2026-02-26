@@ -6,11 +6,13 @@
     padding: 120px 40px;
     background: #ffffff;
     border-top: 1px solid #f1f5f9;
+    margin-top:-5px;
 }
 
 .resource-container {
     max-width: 1200px;
     margin: auto;
+    margin-top:-20px;
 }
 
 /* HEADER */
