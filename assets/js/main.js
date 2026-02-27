@@ -15,20 +15,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 document.addEventListener("DOMContentLoaded", function () {
 
-    const toggle = document.querySelector(".nav-toggle");
-    const nav = document.querySelector(".site-nav");
-    const overlay = document.querySelector(".nav-overlay");
+    var toggle   = document.getElementById("mobile-toggle");
+    var drawer   = document.getElementById("mobile-drawer");
+    var overlay  = document.getElementById("mobile-nav-overlay");
+    var closeBtn = document.getElementById("mobile-drawer-close");
 
-    if (!toggle || !nav || !overlay) return;
+    if (!toggle || !drawer || !overlay) return;
 
-    toggle.addEventListener("click", function () {
-        nav.classList.toggle("active");
-        overlay.classList.toggle("active");
+    function openDrawer() {
+        drawer.classList.add("open");
+        overlay.classList.add("active");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+        drawer.classList.remove("open");
+        overlay.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    toggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        drawer.classList.contains("open") ? closeDrawer() : openDrawer();
     });
 
-    overlay.addEventListener("click", function () {
-        nav.classList.remove("active");
-        overlay.classList.remove("active");
+    overlay.addEventListener("click", closeDrawer);
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", closeDrawer);
+    }
+
+    drawer.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", closeDrawer);
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeDrawer();
     });
 
 });

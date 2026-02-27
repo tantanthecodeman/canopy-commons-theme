@@ -149,7 +149,7 @@ body {
 
 /* Mobile */
 @media (max-width: 900px) {
-
+    
     .nav-toggle {
         display: flex;
     }
@@ -417,6 +417,7 @@ body {
 
     .mobile-toggle {
         display: flex;
+        
     }
 
     .site-header {
@@ -660,4 +661,123 @@ body {
 
 .logo-wrapper.rotate .logo-variant.active {
     transform: rotate(360deg);
+}
+/* =====================================================
+   MOBILE NAV FIX — paste at the very BOTTOM of theme.css
+   This overrides everything above it
+===================================================== */
+
+/* Hide mobile-only elements on desktop — absolute override */
+.mobile-drawer,
+.mobile-nav-overlay {
+    display: none !important;
+}
+
+/* On mobile, allow them to exist but still hidden until JS opens them */
+@media (max-width: 900px) {
+
+    /* Overlay */
+    .mobile-nav-overlay {
+        display: block !important;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        z-index: 1100;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .mobile-nav-overlay.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    /* Drawer */
+    .mobile-drawer {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80vw;
+        max-width: 300px;
+        height: 100%;
+        background: #ffffff;
+        z-index: 1200;
+        padding: 24px 28px 40px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -8px 0 40px rgba(0, 0, 0, 0.12);
+        overflow-y: auto;
+        /* pointer-events off until open so it doesn't block page */
+        pointer-events: none;
+    }
+
+    .mobile-drawer.open {
+        transform: translateX(0);
+        pointer-events: all;
+    }
+
+    /* Close button */
+    .mobile-drawer-close {
+        align-self: flex-end;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #374151;
+        padding: 8px;
+        border-radius: 8px;
+    }
+
+    /* Nav links */
+    .mobile-nav-links {
+        list-style: none;
+        padding: 0;
+        margin: 28px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        flex: 1;
+    }
+
+    .mobile-nav-links li a {
+        display: block;
+        padding: 13px 14px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #374151;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .mobile-nav-links li a:hover,
+    .mobile-nav-links li a.mobile-nav-current {
+        background: #EDF5FB;
+        color: #0E78BE;
+    }
+
+    /* Donate button in drawer */
+    .mobile-donate-btn {
+        display: block;
+        margin-top: 28px;
+        padding: 15px;
+        border-radius: 999px;
+        background: #0E78BE;
+        color: #ffffff;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    /* Make sure the toggle button itself is tappable */
+    .mobile-toggle {
+        position: relative;
+        z-index: 999;
+        pointer-events: all !important;
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
 }

@@ -1,120 +1,15 @@
 .hero{
     padding-top: 40px;
 }
-@media (max-width: 900px) {
-
-    .hero-section {
-        padding: 80px 24px 60px;
-        display: flex;
-        flex-direction: column;
-        gap: 30px;
-    }
-    
-    .hero-section h1 {
-        font-size: 34px;
-        line-height: 1.15;
-        letter-spacing: -0.5px;
-    }
-
-    .hero-section p {
-        font-size: 16px;
-        line-height: 1.6;
-        margin-top: 10px;
-    }
-
-    .hero-cta {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .hero-cta a {
-        width: 100%;
-        text-align: center;
-        border-radius: 16px;
-        padding: 18px;
-    }
-
-    .hero-illustration {
-        order: -1;
-        width: 80%;
-        margin: 0 auto 20px;
-    }
-}
-@media (max-width: 900px) {
-
-    .hero-cta {
-        display: flex;
-        flex-direction: column;
-        gap: 14px;
-        margin-top: 24px;
-    }
-
-    .hero-cta a {
-        width: 100%;
-        padding: 16px 18px;
-        border-radius: 12px;   /* FIXED: no more giant ovals */
-        font-size: 15px;
-        font-weight: 600;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .btn-primary {
-        background: #0E78BE;
-        color: white;
-        box-shadow: 0 10px 25px rgba(14, 120, 190, 0.15);
-    }
-
-    .btn-secondary {
-        border: 1.5px solid #d1d5db;
-        background: white;
-        color: #111827;
-    }
-}
-@media (max-width: 900px) {
-
-    .hero-section h1 {
-        font-size: 32px;
-        line-height: 1.2;
-        font-weight: 700;
-    }
-
-    .hero-section h1 .highlight {
-        font-weight: 700;
-    }
-
-    .hero-section p {
-        font-size: 15px;
-        margin-top: 14px;
-        line-height: 1.6;
-    }
-}
-@media (max-width: 900px) {
-
-    .hero-layout {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hero-illustration {
-        width: 70%;
-        margin: 0 auto 24px;
-    }
-}
 
 
-/* ==========================================
-   ENHANCED HERO DIAGRAM
-========================================== */
 
 /* ==========================================
    NEW HERO MANDALA ANIMATION
 ========================================== */
 
 .diagram-wrapper {
-    width: 115%;
+    width: 105%;
     max-width: 800px;   /* increased from 650px */
     margin: auto;
     animation: floatMandala 12s ease-in-out infinite;
@@ -176,31 +71,8 @@
     to   { transform: rotate(360deg); }
 }
 
-/* ==========================================
-   MOBILE RESPONSIVE FIX
-========================================== */
 
-@media (max-width: 1100px) {
-    .diagram-wrapper {
-        max-width: 600px;
-    }
-}
 
-@media (max-width: 900px) {
-
-    .diagram-wrapper {
-        max-width: 420px;
-        margin: 40px auto 0;
-        animation: none; /* remove float for stability on mobile */
-    }
-
-    .rotate-slow,
-    .rotate-medium,
-    .rotate-fast {
-        animation-duration: 200s; /* slower for performance */
-    }
-
-}
 /* ==========================================
    HERO SPACING FIX
 ========================================== */
@@ -216,4 +88,69 @@
 }
 .hero-visual {
     margin-left: -30px;   /* gently pulls diagram toward text */
+}
+
+/* ==========================================
+   HERO MOBILE FIX (CLEAN)
+========================================== */
+
+@media (max-width: 900px) {
+
+    .hero {
+        padding: 70px 24px 40px;
+    }
+
+    .hero-inner {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .hero-content {
+        order: 1;
+    }
+
+    .hero-title {
+        font-size: 30px;
+        line-height: 1.2;
+        letter-spacing: -0.3px;
+    }
+
+    .hero-subtitle {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-top: 14px;
+    }
+
+    .hero-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+    }
+
+    .hero-cta a {
+        padding: 12px 16px !important;
+        font-size: 14px !important;
+        border-radius: 12px !important;
+    }
+
+    /* Mandala fix */
+    .hero-visual {
+        order: 2;
+        display: flex;
+        justify-content: center;
+    }
+
+     .diagram-wrapper {
+        width: 100% !important;
+        max-width: 460px !important;
+        margin: 20px auto 0 !important;
+        animation: none;
+    }  
+
+    .hero-mandala {
+        width: 100%;
+        height: auto;
+    }
 }
