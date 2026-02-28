@@ -7,6 +7,7 @@
 @import "resource-library.css";
 @import "latest-news.css";
 @import "footer.css";
+@import "team.css";
 * 
 
 {
@@ -662,10 +663,7 @@ body {
 .logo-wrapper.rotate .logo-variant.active {
     transform: rotate(360deg);
 }
-/* =====================================================
-   MOBILE NAV FIX — paste at the very BOTTOM of theme.css
-   This overrides everything above it
-===================================================== */
+
 
 /* Hide mobile-only elements on desktop — absolute override */
 .mobile-drawer,
@@ -779,5 +777,66 @@ body {
         pointer-events: all !important;
         cursor: pointer;
         -webkit-tap-highlight-color: rgba(0,0,0,0.1);
+    }
+}
+
+@media (max-width: 900px) {
+
+    /* ── Layout: stack vertically ── */
+    .hero-section {
+        padding: 100px 24px 60px !important;
+        min-height: unset !important;
+    }
+
+    .hero-container {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 36px !important;
+    }
+
+    /* ── Text ── */
+    .hero-title {
+        font-size: 32px !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-description {
+        font-size: 15px !important;
+        line-height: 1.65 !important;
+    }
+
+    /* ── Buttons: fix oversized pills ── */
+    .hero-buttons {
+        flex-direction: column !important;
+        gap: 12px !important;
+        margin-top: 8px !important;
+    }
+
+    .hero-buttons .btn-primary,
+    .hero-buttons .btn-secondary {
+        padding: 13px 20px !important;
+        font-size: 15px !important;
+        border-radius: 14px !important;
+        text-align: center !important;
+        box-shadow: none !important;
+    }
+
+    /* ── Diagram: make it fill width properly ── */
+    .hero-diagram {
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+
+    .diagram-wrapper {
+        width: 85% !important;
+        max-width: 340px !important;
+        margin: 0 auto !important;
+        animation: none !important;
+    }
+
+    .hero-mandala {
+        width: 100% !important;
+        height: auto !important;
     }
 }

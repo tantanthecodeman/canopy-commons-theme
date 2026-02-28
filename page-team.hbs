@@ -1,0 +1,166 @@
+{{!< default}}
+
+<section class="team-hero section reveal-on-scroll">
+    <div class="container">
+
+        <span class="section-label">OUR TEAM</span>
+
+        <h1 class="team-title">
+            Building civic infrastructure
+            <span>with care and intention</span>
+        </h1>
+
+        <p class="team-intro">
+            Canopy Commons is built by people who believe that democracy works best
+            when it is local, participatory, and human.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- ============================= -->
+<!-- FOUNDER SECTION (Ghost Dynamic Image) -->
+<!-- ============================= -->
+
+<section class="founder-section section reveal-on-scroll">
+    <div class="container founder-container">
+
+        <div class="founder-image">
+    {{#if feature_image}}
+        <img src="{{feature_image}}" alt="Divya Narayanan">
+    {{else}}
+        <img src="{{asset "images/divya_founder.jpg"}}" alt="Divya Narayanan">
+    {{/if}}
+</div>
+
+        <div class="founder-content">
+            <span class="section-label">FOUNDER</span>
+
+            <h2>Divya Narayanan</h2>
+
+            <blockquote>
+                “Civic action should feel accessible, grounded,
+                and deeply connected to place.”
+            </blockquote>
+
+            <div class="founder-description">
+                
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ============================= -->
+<!-- FUTURE TEAM (Dynamic Placeholder) -->
+<!-- ============================= -->
+
+<section class="team-members section reveal-on-scroll">
+    <div class="container">
+
+        <span class="section-label">TEAM MEMBERS</span>
+
+        <div class="team-grid">
+
+    {{#get "posts" filter="tag:team-member" limit="all"}}
+        {{#if posts}}
+            {{#foreach posts}}
+                <div class="team-card">
+                    {{#if feature_image}}
+                        <img src="{{feature_image}}" alt="{{title}}">
+                    {{/if}}
+                    <h3>{{title}}</h3>
+                    <p>{{excerpt}}</p>
+                </div>
+            {{/foreach}}
+        {{else}}
+
+            <!-- Placeholder Cards -->
+            <div class="team-card placeholder">
+                <div class="avatar-placeholder"></div>
+                <h3>Team Member</h3>
+                <p>Role and short bio will appear here.</p>
+            </div>
+
+            <div class="team-card placeholder">
+                <div class="avatar-placeholder"></div>
+                <h3>Team Member</h3>
+                <p>Role and short bio will appear here.</p>
+            </div>
+
+            <div class="team-card placeholder">
+                <div class="avatar-placeholder"></div>
+                <h3>Team Member</h3>
+                <p>Role and short bio will appear here.</p>
+            </div>
+
+        {{/if}}
+    {{/get}}
+
+</div>
+
+    </div>
+</section>
+
+
+<!-- ============================= -->
+<!-- FRIENDS SECTION (Hardcoded) -->
+<!-- ============================= -->
+
+<section class="friends-section section reveal-on-scroll">
+    <div class="friends-bg-accent"></div>
+
+    <div class="container">
+
+        <div class="friends-header">
+            <span class="section-label">FRIENDS OF CANOPY COMMONS</span>
+            <h2>
+                Built with people who care
+                <span>deeply about community</span>
+            </h2>
+        </div>
+
+        <div class="friends-row">
+
+            <div class="friend-card">
+                <img src="{{asset "images/tanay.jpeg"}}" alt="Tanay">
+                <h4>Tanay Gujarathi</h4>
+                <p>
+                    “I debug quicker after coffee.”
+                </p>
+            </div>
+
+            <div class="friend-card">
+                <img src="{{asset "images/sahil.jpeg"}}" alt="Friend 2">
+                <h4>Sahil Soni</h4>
+                <p>
+                    “If it feels ordinary, redesign it.”
+                </p>
+            </div>
+
+            <div class="friend-card">
+                <img src="{{asset "images/anushka.jpeg"}}" alt="Friend 3">
+                <h4>Anushka Dubey</h4>
+                <p>
+                    “Curiosity First. Everything else follows.”
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<section class="partners-section section">
+    <div class="container partners-container">
+
+        <img src="{{asset "images/oasis-team.jpeg"}}" alt="T4CG and OASIS">
+
+        <h3 class="partners-caption">
+            T4GC and OASIS
+        </h3>
+
+    </div>
+</section>

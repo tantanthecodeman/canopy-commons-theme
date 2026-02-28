@@ -1,0 +1,343 @@
+/* ================================
+   TEAM PAGE STYLES
+================================ */
+.section-label{
+  font-size:20px;
+}
+.team-hero {
+    text-align: center;
+    padding-top: 120px;
+}
+
+.team-title {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.team-title span {
+    color: #0E78BE;
+}
+
+.team-intro {
+    max-width: 700px;
+    margin: 20px auto 0;
+    color: #6b7280;
+}
+
+/* Founder */
+/* =====================================
+   FOUNDER – ENHANCED DESIGN
+===================================== */
+
+.founder-section {
+    position: relative;
+    background: #f8fbff;
+    padding: 160px 40px;
+    overflow: hidden;
+}
+
+/* Soft radial brand glow */
+.founder-section::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    left: -120px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center,
+        rgba(14,120,190,0.12),
+        transparent 70%);
+    filter: blur(80px);
+    z-index: 0;
+}
+
+/* Ensure content above glow */
+.founder-container {
+    position: relative;
+    z-index: 2;
+}
+.founder-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Founder Image Size Control */
+.founder-image img {
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    object-fit: cover;
+    object-position: top center;
+    border-radius: 28px;
+    box-shadow:
+        0 30px 80px rgba(14,120,190,0.15),
+        0 10px 25px rgba(0,0,0,0.08);
+    transition: transform 0.5s ease;
+}
+
+/* Subtle hover lift */
+.founder-image img:hover {
+    transform: translateY(-12px);
+}
+.founder-content h2 {
+    font-size: 48px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.founder-content h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    margin-top: 14px;
+    background: linear-gradient(
+        90deg,
+        #0E78BE,
+        #DA6586
+    );
+    border-radius: 3px;
+}
+
+.founder-content blockquote {
+    font-size: 22px;
+    font-weight: 600;
+    color: #DA6586;
+    margin: 20px 0;
+}
+
+/* Team Grid */
+
+.team-members {
+    background: white;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    
+}
+
+.team-card {
+    padding: 40px;
+    border-radius: 16px;
+    background: #f3f4f6;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    background: #e5e7eb;
+    transform: translateY(-6px);
+}
+
+.avatar-placeholder {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #d1d5db;
+    margin: 0 auto 20px;
+}
+
+/* Friends */
+
+/* ==========================================
+   FRIENDS PREMIUM GLASS SECTION
+========================================== */
+
+.friends-section {
+    position: relative;
+    padding: 140px 40px;
+    overflow: hidden;
+}
+
+/* Soft background glow */
+.friends-bg-accent {
+    position: absolute;
+    top: -150px;
+    right: -150px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle at center,
+        rgba(218,101,134,0.12),
+        transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+}
+
+.friends-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.friends-header h2 {
+    font-size: 48px;
+    font-weight: 800;
+}
+
+.friends-header h2 span {
+    color: #0E78BE;
+}
+
+
+
+
+/* Alternate Section Background Rhythm */
+
+.founder-section {
+    background: #f9fafb;
+}
+
+.team-members {
+    background: white;
+}
+
+.friends-section {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #f8fbff 100%
+    );
+}
+/* =====================================
+   FRIENDS – FULL IMAGE CARDS
+===================================== */
+
+.friends-section {
+    background: #f8fbff;
+}
+
+.friends-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Card */
+.friend-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden; /* important for image edge clipping */
+    box-shadow: 0 25px 70px rgba(14,120,190,0.08);
+    transition: 0.35s ease;
+    position: relative;
+}
+
+/* Hover lift */
+.friend-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Image spans full width */
+.friend-card img {
+    width: 100%;
+    height: 320px;              /* Taller image area */
+    object-fit: cover;
+    object-position: top center; /* Prevent face cut-off */
+    display: block;
+}
+
+/* Content */
+.friend-card h4 {
+    margin: 24px 24px 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.friend-card p {
+    margin: 0 24px 28px;
+    color: #4b5563;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* Top Accent Line (Default Blue) */
+.friend-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6px;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (max-width: 900px) {
+
+    .friends-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .friend-card {
+        width: 90%;
+        max-width: 360px;
+    }
+
+    .friends-header h2 {
+        font-size: 32px;
+    }
+    .friends-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Partners */
+
+/* =====================================
+   PARTNERS
+===================================== */
+
+.partners-section {
+    background: white;
+    text-align: center;
+    padding: 140px 40px;
+}
+
+.partners-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.partners-container img {
+    width: 100%;
+    max-width: 900px;   /* Bigger */
+    border-radius: 24px;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+    display: block;
+    margin: 0 auto;     /* Force centering */
+}
+
+.partners-caption {
+    margin-top: 28px;
+    font-weight: 700;
+    font-size: 22px;
+    color: #0E78BE;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+    .founder-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .team-title {
+        font-size: 36px;
+    }
+
+    .partners-row {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
